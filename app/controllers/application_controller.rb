@@ -1,10 +1,29 @@
-# Filters added to this controller apply to all controllers in the application.
-# Likewise, all the methods added will be available for all controllers.
-
 class ApplicationController < ActionController::Base
-  helper :all # include all helpers, all the time
-  protect_from_forgery # See ActionController::RequestForgeryProtection for details
+  protect_from_forgery       
+                                                                                
+  skip_before_filter :verify_authenticity_token, :only => ['login','logout']                         
 
-  # Scrub sensitive parameters from your log
-  # filter_parameter_logging :password
+  def admin?                                                                    
+    User.current_user.user_roles.map(&:role).include?('admin')                  
+  end
+
+  def check_authorized
+    unless admin?
+      redirect_to '/'
+    end
+  end
+
+                                                                                 
+  protected                                                                     
+                                                                                
+  def perform_basic_auth                                                        
+    if session[:current_user_id].blank?                                                 
+      respond_to do |format|                                                    
+        format.html { redirect_to :controller => 'user',:action => 'logout' }   
+      end                                                                       
+    elsif not session[:current_user_id].blank?                                          
+      User.current_user = User.where(:'id' => session[:user_id]).first        
+    end                                                                         
+  end 
+
 end

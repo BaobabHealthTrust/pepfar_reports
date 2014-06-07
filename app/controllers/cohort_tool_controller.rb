@@ -1,16 +1,43 @@
 class CohortToolController < ApplicationController
 
 def monthly_survival
-      if request.post?
-        year = params[:year]
+        @year = params[:year]
+        @month = params[:month]
         month = month_number(params[:month])
-        reg_month_start = "#{year}-#{month}-01".to_date
+        reg_month_start = "#{@year}-#{month}-01".to_date
         reg_month_end = reg_month_start.end_of_month
-        retained = params[:observations][0]["obs_datetime"].to_date.strftime("%Y-%m-%y")
+        ret_month = month_number(params[:retension_month])
+        retained = "#{params[:retension_year]}-#{ret_month}-01".to_date.end_of_month
+        @ret_year = params[:retension_year]
+        @ret_month = params[:retension_month]
         @def_ids, @def_ages = defaulted_patients(reg_month_start, reg_month_end, retained)
-        @art_ids, @art_age, @outcome = art_patients(reg_month_start, reg_month_end, retained, def_ids.join(","))
-        all_ages = @def_ages + @art_ages
-      end
+        @art_ids, @art_age, @outcome = art_patients(reg_month_start, reg_month_end, retained, @def_ids.join(","))
+        @age = {}
+        @age["less1"] = 0
+        @age["less15"] = 0
+        @age["more15"] = 0
+        @def_ages.each {|age|
+           if age.to_i < 1
+             @age["less1"] += 1
+           elsif age.to_i >= 1 and age.to_i < 15
+             @age["less15"] += 1
+           else
+             @age["more15"] += 1
+           end
+        }
+        @art_age.each {|age|
+           if age.to_i < 1
+             @age["less1"] += 1
+           elsif age.to_i >= 1 and age.to_i < 15
+             @age["less15"] += 1
+           else
+             @age["more15"] += 1
+           end
+        }
+
+
+        @total = @def_ids.length + @art_ids.length
+        render :template => '/administration/index'
   end
 
   def art_patients(start_date, end_date, retained_date, ids)
@@ -27,6 +54,9 @@ def monthly_survival
       patients_ages << patient.age #rescue "N/A"
       status = patient.status
       status = "Died" if status.match(/died/i)
+      status = "Alive and On treatment" if status.match(/antire/i)
+      status = "Alive and On treatment" if status.match(/treat/i)
+      status = "Alive and On treatment" if status.match(/arvs/i)
       patient_outcome[status] = [] if patient_outcome[status].blank?
       patient_outcome[status] << patient.patient_id
     end

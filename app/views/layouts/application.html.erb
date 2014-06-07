@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PEPFAR Reporting</title>
+  <%#= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%#= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags rescue ""%>
+  <!-- Bootstrap core CSS -->
+  <link href="/bootstrap/css/bootstrap.css" rel="stylesheet">
+  <link href="/bootstrap/css/bootstrap-theme.css" rel="stylesheet">
+  <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <style type="text/css">
+    body {
+      padding-top: 50px;
+      -moz-user-select: none;
+    }
+    .starter-template {
+      padding: 40px 15px;
+      text-align: center;
+    }
+    form .alert,
+	  form .process
+	  {
+	      display: none;
+	  }
+	 
+    /*@import url('/bootstrap/css/bootstrap.min.css');
+    @import url('/bootstrap/css/bootstrap.css');*/
+    /* New styles */
+
+    label.valid {
+	    width: 24px;
+	    height: 24px;
+	    background: url(/images/valid.png) center center no-repeat;
+	    display: inline-block;
+	    text-indent: -9999px;
+    }
+    label.error {
+	    font-weight: bold;
+	    color: red;
+	    padding: 2px 8px;
+	    margin-top: 2px;
+    }
+    
+    .head {
+      padding-top: 15px !important;
+      padding-bottom: 18px !important;
+    }
+  </style>
+</head>
+<body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" >PEPFAR Reporting System</a>
+        </div>
+        
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/">Home</a></li>
+            <li class="dropdown">
+              <a href="/administration/site_show" class="dropdown-toggle" data-toggle="dropdown">Report Features <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/cohort_tool/monthly_survival">Retension</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="/administration/user_show" class="dropdown-toggle" data-toggle="dropdown">User Management <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/administration/user_add">Add User</a></li>
+                <li><a href="/administration/user_edit">Edit User</a></li>
+                <li><a href="/administration/user_show">View By User</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+  
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="/javascripts/jquery.js"></script>
+  <script src="/bootstrap/js/bootstrap.js"></script>
+  <script src="/javascripts/jquery.validate.js"></script>
+  
+  <%= yield %>
+  
+  <div class="navbar  navbar-inverse navbar-fixed-bottom" style="min-height: 30px !important; 
+      color: #ccc !important; text-align: center !important; padding-top: 5px !important;">
+        &copy; <%= Date.today.strftime("%Y") %> <a href="http://www.baobabhealth.org" target="_blank">
+
+  </div>
+</body>
+</html>

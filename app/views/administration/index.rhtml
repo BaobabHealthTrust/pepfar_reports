@@ -1,0 +1,274 @@
+<style>
+   div {
+    -moz-user-select: none;
+  }
+
+  .scan-barcode div {
+    padding-left: 10px;
+  }
+
+        .basic_span {
+        position:relative;
+        width:50%;
+        display:block;
+        float:left;
+      }
+	  .create_button a{
+		    background-color: #7784AE;
+			border-bottom: 1px outset black;
+			border-radius: 7px 7px 7px 7px;
+			border-style: outset;
+			border-top: 1px outset black;
+			color: #E8EAF1;
+			display: block;
+			padding: 10px 16px 10px 10px;
+			text-align: center;
+			text-decoration: none !important;
+		}
+	 a:hover {
+		  color: black;
+		}
+
+      .logo {
+        float:left
+      }
+
+      #table_id {
+        width: 100%;
+      }
+
+      #table_id_filter{
+        position:absolute;
+        top:0px;
+        right:1%;
+        margin-top:-40px;
+      }
+
+      #table_id_filter input{
+        padding:0.5em;
+      }
+
+
+      .dataTables_length select {
+        font-size: 25px;
+      }
+      .horizontal_line hr{
+        position:absolute;
+        bottom:104px;
+      }
+      #table_id_info{
+        left: 10px;
+        position: absolute;
+        top: 455px;
+        font-weight:bold;
+      }
+      #table_id_length{
+        display:none;
+      }
+       #table_id_paginate{
+        display:none;
+      }
+      #num{ display:none; }
+      #char{ display:none; }
+
+  .description {
+    float: left;
+    width: 65%;
+    margin-left: 10px;
+  }
+
+  .menu-buttons {
+    padding: 10px;
+    float: right;
+    width: 30%;
+    margin-right: 10px;
+  }
+
+  .menu-buttons a {
+    width: 95%;
+    line-height: 50px;
+  }
+
+  #selection {
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    position:relative;
+    background:#CCCCCC !important;
+    min-height: 200px;
+    font-size: 23px;
+  }
+  
+  .submit_buttons {
+    background-color: grey;
+    border-bottom: 1px outset #EEEEEE;
+    border-style: outset;
+    border-top: 1px outset #EEEEEE;
+    color: white;
+    display: block;
+    padding:8px;
+    margin:8px;
+    text-align: center;
+    text-decoration: none;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    width: 147px;
+
+    background-color: rgb(0, 116, 204);
+    background-image: -moz-linear-gradient(center top , rgb(0, 136, 204), rgb(0, 85, 204));
+    background-repeat: repeat-x;
+    border-bottom-color: rgba(0, 0, 0, 0.25);
+    border-left-color-ltr-source: physical;
+    border-left-color-rtl-source: physical;
+    border-left-color-value: rgba(0, 0, 0, 0.1);
+    border-right-color-ltr-source: physical;
+    border-right-color-rtl-source: physical;
+    border-right-color-value: rgba(0, 0, 0, 0.1);
+    border-top-color: rgba(0, 0, 0, 0.1);
+
+    font-size: 1.3em; 
+  }
+
+
+</style>
+
+<%
+        qtrs = [""]
+    date = Date.today 
+    24.times{|x|
+      qtrs << "#{date.year}"
+      date = date - 1.year
+    }
+    months = ["","January","February","March","April","May","June","July","August","September","October","November","December"]
+
+%>
+<!--div class="scan-barcode">
+  <form id='barcodeForm' action="/find_by_barcode">
+    <%#= text_field_tag :barcode, '', {:id => 'barcode', :class => 'touchscreenTextInput' } %>
+    <%#= submit_tag "Submit", :style => "display:none" %>
+    <div style="color:gray">scan a barcode</div>
+  </form>
+</div-->
+
+
+<div class="main-container">
+
+  <div class="description">
+    <div class="page-header">
+      <h1> Site: <%= Location.current_health_center.name rescue "" %><small></small></h1>
+    </div>
+
+
+    <div id = "description-content">
+      <%=render(:inline => print_content(about_organization)) rescue "" %>
+    </div>
+
+   <div id ="selection"style="width:480px; margin:0 auto;">
+     <form id="search" action="/cohort_tool/monthly_survival" >
+     <table><tr>
+         <td>
+           Registration Month: </td><td align="right">
+                      <select width="300" style="width: 300px" name="month" >
+                        <% months.each{|month| %>
+                        <option value="<%= month %>"><%= month %></option>
+                        <% } %>
+                      </select>
+         </td>
+       </tr>
+       <tr>
+         <td>
+         Registration Year: </td><td align="right">
+                <select width="300" style="width: 300px" name="year">
+                        <% qtrs.each{|yr| %>
+                        <option value="<%= yr  %>"><%= yr %></option>
+                        <% } %>
+               </select>
+         </td>
+       </tr>
+       <tr>
+         <td>
+         Retension Month: </td><td align="right">
+                <select width="300" style="width: 300px" name="retension_month">
+                        <% months.each{|yr| %>
+                        <option value="<%= yr  %>"><%= yr %></option>
+                        <% } %>
+               </select>
+         </td>
+       </tr>
+        <tr>
+         <td>
+         Retension Year: </td><td align="right">
+                <select width="300" style="width: 300px" name="retension_year">
+                        <% qtrs.each{|yr| %>
+                        <option value="<%= yr  %>"><%= yr %></option>
+                        <% } %>
+               </select>
+         </td>
+       </tr>
+       <tr>
+         <td colspan="2" align="center">
+           <input type="submit" class="submit_buttons" value="Search" />
+         </td>
+       </tr>
+     </table>
+     </form>
+  </div>
+ <% if  ! @total.blank? %>
+    <div style="border: 3px solid #80890F;padding:8px;margin:8px;-moz-border-radius: 15px;border-radius: 15px;">
+  <table name="table_id" id="table_id" class="display" width="100%">
+			<thead>
+                          <tr>
+
+                                                        <th width="100%" style="font-size:23px;" colspan="2">Follow up of patients registered in <%= @month %>, <%= @year %>
+                                                        by end of <%= @ret_month %>, <%= @ret_year %></th>
+					</tr>
+					<tr>
+
+                                                        <th width="50%">Total Patients</th>
+                                                        <th width="50%" align="right"><%=  @total %></th>
+					</tr>
+                                        <tr>
+
+                                                        <th width="50%">Less 1yr</th>
+                                                        <th width="50%" align="right"><%=  @age["less1"] %></th>
+					</tr>
+                                        <tr>
+
+                                                        <th width="50%"> 1yr to 15yrs</th>
+                                                        <th width="50%" align="right"><%=  @age["less15"] %></th>
+					</tr>
+                                        <tr>
+
+                                                        <th width="50%">More than 15yrs</th>
+                                                        <th width="50%" align="right"><%=  @age["more15"] %></th>
+					</tr>
+                                        <tr>
+
+                                          <th width="100%" colspan="2">Outcomes</th>
+                                        </tr>
+                                        <tr>
+
+                                                        <th width="50%">Defaulters</th>
+                                                        <th width="50%" align="right"><%= @def_ids.length  %></th>
+					</tr>
+                                      <% @outcome.each{|outc, total| %>
+                                        <tr>
+
+                                                        <th width="50%"><%= outc   %></th>
+                                                        <th width="50%" align="right"><%= total.length  %></th>
+					</tr>
+                                        <% } %>
+                         </thead>
+  </table>
+  </div>
+ <% end %>
+
+  </div>
+
+  <div class="menu-buttons">
+
+
+  </div>
+
+
+</div>
+  

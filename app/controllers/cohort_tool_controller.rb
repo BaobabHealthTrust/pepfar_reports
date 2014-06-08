@@ -54,6 +54,9 @@ def monthly_survival
     elsif params[:id] == "15_to_100"
       @data = drill_ages(15, 1000)
       @category = "Age - Above 15"
+    elsif params[:id] == "total"
+      @data = drill_outcomes(session[:ids])
+      @category = "Total Registered"
     elsif params[:id] == "defaulted"
       @data = drill_outcomes(session[:defaulters])
       @category = "Outcome - Defaulters"
@@ -86,16 +89,27 @@ def monthly_survival
      return patients_ids
   end
 
-    def drill_outcomes(ids)
+  def drill_outcomes(ids)
     patients_ids = []
     PatientProgram.find_by_sql("
-                    SELECT p.patient_id, p.identifier FROM earliest_start_date e
+                    SELECT e.patient_id, p.identifier FROM earliest_start_date e
                     LEFT JOIN patient_identifier p ON e.patient_id = p.patient_id
                     WHERE p.identifier_type = 4 AND p.patient_id IN (#{ids.join(',')})
                    ").each do | patient |
 				patients_ids << [patient.patient_id, patient.identifier]
      end
      return patients_ids
+  end
+
+  def pre_art(start_date, end_date)
+    patients_ids = []
+    PatientProgram.find_by_sql("
+                    SELECT p.patient_id, (SELECT MIN(obs_datetime) FROM obs o WHERE o.person_id = p.patient_id) current FROM patient p
+                    WHERE p.voided = 0 AND DATE(current) >= '#{start_date}' AND DATE(current) <= '#{end_date}'").each{|patient|
+                    patients_ids << [patient.patient_id, patient.current]
+                    }
+
+    return patients_ids
   end
 
   def art_patients(start_date, end_date, retained_date, ids)
@@ -111,7 +125,7 @@ def monthly_survival
                                 INNER join earliest_start_date e ON e.patient_id = p.patient_id
                                 INNER JOIN concept_name c ON c.concept_id = pw.concept_id
                                 WHERE earliest_start_date >= '#{start_date}' AND earliest_start_date  <= '#{end_date}'
-                                AND e.patient_id NOT IN (#{ids})").each do | patient |
+                                AND e.patient_id NOT IN (#{ids}) AND DATE(e.date_enrolled) = DATE(e.earliest_start_date)").each do | patient |
       next if patients_ids.include?(patient.patient_id)
       patients_ids << patient.patient_id
       patients_ages << patient.age #rescue "N/A"
@@ -145,6 +159,7 @@ def monthly_survival
 		 PatientProgram.find_by_sql("SELECT e.patient_id, e.age_at_initiation AS age, current_defaulter(patient_id, '#{retained_date}') AS def
 											FROM earliest_start_date e LEFT JOIN person p ON p.person_id = e.patient_id
 											WHERE e.earliest_start_date >= '#{start_date}' AND e.earliest_start_date <=  '#{end_date}' AND p.dead=0
+                      AND DATE(e.date_enrolled) = DATE(e.earliest_start_date)
 											HAVING def = 1 AND current_state_for_program(patient_id, 1, '#{retained_date}') NOT IN (6, 2, 3)").each do | patient |
 				next if patients_ids.include?(patient.patient_id)
         patients_ids << patient.patient_id

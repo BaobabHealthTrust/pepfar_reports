@@ -115,7 +115,8 @@
    function registeredPatients() {
      var start_date = document.getElementById('report_start_date').value;               
      var end_date = document.getElementById('report_end_date').value;               
-     window.location = '/reports/on_art?start_date=' + start_date + "&end_date=" + end_date;
+     var age = document.getElementById('age').value;               
+     window.location = '/reports/on_art?start_date=' + start_date + "&end_date=" + end_date + "&age=" + age;
    }
 </script>
 
@@ -131,6 +132,12 @@
     </tr>
     <tr>
       <td><%=text_field(:report, :end_date ,:placeholder => "End date") %></td>
+    </tr>
+    <tr>
+      <%
+        ages = [['All','All'],['Less than one','0,0'],['Between 1 and 14','1 to 14'],['15 and above','>= 15']]
+      %>
+      <td><%= select_tag "age", options_for_select(ages),:placeholder => "All" %></td>
       <td>
           <input onclick="registeredPatients();" type="button" id="signup"                
           class="btn btn-primary signup_btn" value="Apply" style="width:100%;" />

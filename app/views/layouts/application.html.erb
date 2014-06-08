@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+
   <title>PEPFAR</title>
   <%#= csrf_meta_tag %>
   <!-- Bootstrap core CSS -->
@@ -196,7 +197,6 @@
          background-image: -o-linear-gradient(top, #77021d, #3a000d);
          background-image: linear-gradient(to bottom, #77021d, #3a000d);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#77021d, endColorstr=#3a000d);
     }
-
   </style>
 </head>
 <body>
@@ -210,6 +210,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
+
           <a class="navbar-brand" >PEPFAR REPORTS @ 
             <span style="color: #428BCA"><%= Location.current_health_center.name rescue "?" %></span> </a>
         </div>

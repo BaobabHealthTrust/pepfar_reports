@@ -2698,3 +2698,1333 @@ RuntimeError (---
 Rendered rescues/_trace (78.5ms)
 Rendered rescues/_request_and_response (0.7ms)
 Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserController#login (for 127.0.0.1 at 2014-06-08 17:30:52) [GET]
+Rendering template within layouts/application
+Rendering user/login
+  [4;36;1mLocation Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `location`[0m
+  [4;35;1mGlobalProperty Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `global_property`[0m
+  [4;36;1mGlobalProperty Load (0.2ms)[0m   [0;1mSELECT * FROM `global_property` WHERE (`global_property`.`property` = 'current_health_center_id') LIMIT 1[0m
+  [4;35;1mLocation Load (0.2ms)[0m   [0mSELECT * FROM `location` WHERE (`location`.`location_id` = 10) AND (location.retired = 0) [0m
+Completed in 39ms (View: 32, DB: 4) | 200 OK [http://localhost/user/login]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserController#login (for 127.0.0.1 at 2014-06-08 17:30:59) [POST]
+  Parameters: {"user"=>{"username"=>"admin", "password"=>"test"}, "commit"=>"Login"}
+  [4;35;1mUser Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`username` = 'admin') AND (users.retired = 0) LIMIT 1[0m
+
+RuntimeError (--- 
+):
+  app/controllers/user_controller.rb:16:in `login'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  devise (1.0.11) lib/devise/rails/warden_compat.rb:43:in `call'
+  passenger (4.0.41) lib/phusion_passenger/rack/thread_handler_extension.rb:74:in `process_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:141:in `accept_and_process_next_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:109:in `main_loop'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:448:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `initialize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `new'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `times'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `synchronize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:205:in `main_loop'
+  passenger (4.0.41) helper-scripts/classic-rails-preloader.rb:187
+
+Rendered rescues/_trace (166.2ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserController#login (for 127.0.0.1 at 2014-06-08 17:31:11) [POST]
+  Parameters: {"user"=>{"username"=>"admin", "password"=>"test"}, "commit"=>"Login"}
+  [4;36;1mUser Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'admin') AND (users.retired = 0) LIMIT 1[0m
+
+RuntimeError (--- 
+):
+  app/controllers/user_controller.rb:16:in `login'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  devise (1.0.11) lib/devise/rails/warden_compat.rb:43:in `call'
+  passenger (4.0.41) lib/phusion_passenger/rack/thread_handler_extension.rb:74:in `process_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:141:in `accept_and_process_next_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:109:in `main_loop'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:448:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `initialize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `new'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `times'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `synchronize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:205:in `main_loop'
+  passenger (4.0.41) helper-scripts/classic-rails-preloader.rb:187
+
+Rendered rescues/_trace (73.8ms)
+Rendered rescues/_request_and_response (0.7ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`username` = 'admin') AND (users.retired = 0) LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'admin') AND (users.retired = 0) LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`username` = 'admin') AND (users.retired = 0) LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserController#login (for 127.0.0.1 at 2014-06-08 17:37:21) [GET]
+Rendering template within layouts/application
+Rendering user/login
+  [4;35;1mLocation Columns (2.9ms)[0m   [0mSHOW FIELDS FROM `location`[0m
+  [4;36;1mGlobalProperty Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `global_property`[0m
+  [4;35;1mGlobalProperty Load (0.3ms)[0m   [0mSELECT * FROM `global_property` WHERE (`global_property`.`property` = 'current_health_center_id') LIMIT 1[0m
+  [4;36;1mLocation Load (0.2ms)[0m   [0;1mSELECT * FROM `location` WHERE (`location`.`location_id` = 10) AND (location.retired = 0) [0m
+Completed in 155ms (View: 147, DB: 5) | 200 OK [http://localhost/user/login]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserController#login (for 127.0.0.1 at 2014-06-08 17:37:30) [POST]
+  Parameters: {"user"=>{"username"=>"admin", "password"=>"test"}, "commit"=>"Login"}
+  [4;36;1mUser Columns (3.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'admin') AND (users.retired = 0) LIMIT 1[0m
+
+RuntimeError (--- 
+):
+  app/controllers/user_controller.rb:16:in `login'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  devise (1.0.11) lib/devise/rails/warden_compat.rb:43:in `call'
+  passenger (4.0.41) lib/phusion_passenger/rack/thread_handler_extension.rb:74:in `process_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:141:in `accept_and_process_next_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:109:in `main_loop'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:448:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `initialize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `new'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `times'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `synchronize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:205:in `main_loop'
+  passenger (4.0.41) helper-scripts/classic-rails-preloader.rb:187
+
+Rendered rescues/_trace (80.7ms)
+Rendered rescues/_request_and_response (0.7ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserController#login (for 127.0.0.1 at 2014-06-08 17:37:54) [GET]
+Rendering template within layouts/application
+Rendering user/login
+  [4;35;1mLocation Columns (4.2ms)[0m   [0mSHOW FIELDS FROM `location`[0m
+  [4;36;1mGlobalProperty Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `global_property`[0m
+  [4;35;1mGlobalProperty Load (0.3ms)[0m   [0mSELECT * FROM `global_property` WHERE (`global_property`.`property` = 'current_health_center_id') LIMIT 1[0m
+  [4;36;1mLocation Load (0.3ms)[0m   [0;1mSELECT * FROM `location` WHERE (`location`.`location_id` = 10) AND (location.retired = 0) [0m
+Completed in 49ms (View: 39, DB: 7) | 200 OK [http://localhost/user/login]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserController#login (for 127.0.0.1 at 2014-06-08 17:38:01) [POST]
+  Parameters: {"user"=>{"username"=>"admin", "password"=>"test"}, "commit"=>"Login"}
+  [4;36;1mUser Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'admin') AND (users.retired = 0) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user/login
+  [4;36;1mLocation Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `location`[0m
+  [4;35;1mGlobalProperty Columns (0.4ms)[0m   [0mSHOW FIELDS FROM `global_property`[0m
+  [4;36;1mGlobalProperty Load (0.1ms)[0m   [0;1mSELECT * FROM `global_property` WHERE (`global_property`.`property` = 'current_health_center_id') LIMIT 1[0m
+  [4;35;1mLocation Load (0.1ms)[0m   [0mSELECT * FROM `location` WHERE (`location`.`location_id` = 10) AND (location.retired = 0) [0m
+Completed in 67ms (View: 49, DB: 5) | 200 OK [http://localhost/user/login]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserController#login (for 127.0.0.1 at 2014-06-08 17:38:51) [GET]
+Rendering template within layouts/application
+Rendering user/login
+  [4;35;1mLocation Columns (3.3ms)[0m   [0mSHOW FIELDS FROM `location`[0m
+  [4;36;1mGlobalProperty Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `global_property`[0m
+  [4;35;1mGlobalProperty Load (0.2ms)[0m   [0mSELECT * FROM `global_property` WHERE (`global_property`.`property` = 'current_health_center_id') LIMIT 1[0m
+  [4;36;1mLocation Load (0.2ms)[0m   [0;1mSELECT * FROM `location` WHERE (`location`.`location_id` = 10) AND (location.retired = 0) [0m
+Completed in 49ms (View: 39, DB: 5) | 200 OK [http://localhost/user/login]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserController#login (for 127.0.0.1 at 2014-06-08 17:38:56) [POST]
+  Parameters: {"user"=>{"username"=>"admin", "password"=>"test"}, "commit"=>"Login"}
+  [4;36;1mUser Columns (3.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+
+RuntimeError (--- !map:HashWithIndifferentAccess 
+username: admin
+password: test
+):
+  app/controllers/user_controller.rb:15:in `login'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  devise (1.0.11) lib/devise/rails/warden_compat.rb:43:in `call'
+  passenger (4.0.41) lib/phusion_passenger/rack/thread_handler_extension.rb:74:in `process_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:141:in `accept_and_process_next_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:109:in `main_loop'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:448:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `initialize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `new'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `times'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `synchronize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:205:in `main_loop'
+  passenger (4.0.41) helper-scripts/classic-rails-preloader.rb:187
+
+Rendered rescues/_trace (81.3ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserController#login (for 127.0.0.1 at 2014-06-08 17:39:50) [POST]
+  Parameters: {"user"=>{"username"=>"admin", "password"=>"test"}, "commit"=>"Login"}
+  [4;36;1mUser Columns (3.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'admin') AND (users.retired = 0) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user/login
+  [4;36;1mLocation Columns (4.2ms)[0m   [0;1mSHOW FIELDS FROM `location`[0m
+  [4;35;1mGlobalProperty Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `global_property`[0m
+  [4;36;1mGlobalProperty Load (0.2ms)[0m   [0;1mSELECT * FROM `global_property` WHERE (`global_property`.`property` = 'current_health_center_id') LIMIT 1[0m
+  [4;35;1mLocation Load (0.3ms)[0m   [0mSELECT * FROM `location` WHERE (`location`.`location_id` = 10) AND (location.retired = 0) [0m
+Completed in 207ms (View: 138, DB: 10) | 200 OK [http://localhost/user/login]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`username` = 'admin') AND (users.retired = 0) LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserController#login (for 127.0.0.1 at 2014-06-08 17:42:16) [POST]
+  Parameters: {"user"=>{"username"=>"admin", "password"=>"password"}, "commit"=>"Login"}
+  [4;35;1mUser Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`username` = 'admin') AND (users.retired = 0) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user/login
+  [4;35;1mLocation Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `location`[0m
+  [4;36;1mGlobalProperty Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `global_property`[0m
+  [4;35;1mGlobalProperty Load (0.2ms)[0m   [0mSELECT * FROM `global_property` WHERE (`global_property`.`property` = 'current_health_center_id') LIMIT 1[0m
+  [4;36;1mLocation Load (0.2ms)[0m   [0;1mSELECT * FROM `location` WHERE (`location`.`location_id` = 10) AND (location.retired = 0) [0m
+Completed in 72ms (View: 30, DB: 7) | 200 OK [http://localhost/user/login]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserController#login (for 127.0.0.1 at 2014-06-08 17:42:41) [POST]
+  Parameters: {"user"=>{"username"=>"admin", "password"=>"password"}, "commit"=>"Login"}
+  [4;36;1mUser Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'admin') AND (users.retired = 0) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user/login
+  [4;36;1mLocation Columns (2.9ms)[0m   [0;1mSHOW FIELDS FROM `location`[0m
+  [4;35;1mGlobalProperty Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `global_property`[0m
+  [4;36;1mGlobalProperty Load (0.2ms)[0m   [0;1mSELECT * FROM `global_property` WHERE (`global_property`.`property` = 'current_health_center_id') LIMIT 1[0m
+  [4;35;1mLocation Load (0.2ms)[0m   [0mSELECT * FROM `location` WHERE (`location`.`location_id` = 10) AND (location.retired = 0) [0m
+Completed in 86ms (View: 41, DB: 8) | 200 OK [http://localhost/user/login]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserController#login (for 127.0.0.1 at 2014-06-08 17:43:17) [GET]
+Rendering template within layouts/application
+Rendering user/login
+  [4;35;1mLocation Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `location`[0m
+  [4;36;1mGlobalProperty Columns (2.8ms)[0m   [0;1mSHOW FIELDS FROM `global_property`[0m
+  [4;35;1mGlobalProperty Load (0.3ms)[0m   [0mSELECT * FROM `global_property` WHERE (`global_property`.`property` = 'current_health_center_id') LIMIT 1[0m
+  [4;36;1mLocation Load (0.3ms)[0m   [0;1mSELECT * FROM `location` WHERE (`location`.`location_id` = 10) AND (location.retired = 0) [0m
+Completed in 62ms (View: 52, DB: 7) | 200 OK [http://localhost/user/login]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserController#login (for 127.0.0.1 at 2014-06-08 17:43:22) [POST]
+  Parameters: {"user"=>{"username"=>"admin", "password"=>"test"}, "commit"=>"Login"}
+  [4;36;1mUser Columns (3.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'admin') AND (users.retired = 0) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user/login
+  [4;36;1mLocation Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `location`[0m
+  [4;35;1mGlobalProperty Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `global_property`[0m
+  [4;36;1mGlobalProperty Load (0.2ms)[0m   [0;1mSELECT * FROM `global_property` WHERE (`global_property`.`property` = 'current_health_center_id') LIMIT 1[0m
+  [4;35;1mLocation Load (0.2ms)[0m   [0mSELECT * FROM `location` WHERE (`location`.`location_id` = 10) AND (location.retired = 0) [0m
+Completed in 179ms (View: 36, DB: 8) | 200 OK [http://localhost/user/login]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserController#login (for 127.0.0.1 at 2014-06-08 17:44:01) [GET]
+Rendering template within layouts/application
+Rendering user/login
+  [4;35;1mLocation Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `location`[0m
+  [4;36;1mGlobalProperty Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `global_property`[0m
+  [4;35;1mGlobalProperty Load (0.2ms)[0m   [0mSELECT * FROM `global_property` WHERE (`global_property`.`property` = 'current_health_center_id') LIMIT 1[0m
+  [4;36;1mLocation Load (0.2ms)[0m   [0;1mSELECT * FROM `location` WHERE (`location`.`location_id` = 10) AND (location.retired = 0) [0m
+Completed in 47ms (View: 39, DB: 4) | 200 OK [http://localhost/user/login]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserController#login (for 127.0.0.1 at 2014-06-08 17:44:06) [POST]
+  Parameters: {"user"=>{"username"=>"admin", "password"=>"password"}, "commit"=>"Login"}
+  [4;36;1mUser Columns (3.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'admin') AND (users.retired = 0) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user/login
+  [4;36;1mLocation Columns (2.7ms)[0m   [0;1mSHOW FIELDS FROM `location`[0m
+  [4;35;1mGlobalProperty Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `global_property`[0m
+  [4;36;1mGlobalProperty Load (0.4ms)[0m   [0;1mSELECT * FROM `global_property` WHERE (`global_property`.`property` = 'current_health_center_id') LIMIT 1[0m
+  [4;35;1mLocation Load (0.2ms)[0m   [0mSELECT * FROM `location` WHERE (`location`.`location_id` = 10) AND (location.retired = 0) [0m
+Completed in 86ms (View: 39, DB: 9) | 200 OK [http://localhost/user/login]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mUser Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`username` = 'admin') AND (users.retired = 0) LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserController#login (for 127.0.0.1 at 2014-06-08 17:48:30) [POST]
+  Parameters: {"user"=>{"username"=>"admin", "password"=>"password"}, "commit"=>"Login"}
+  [4;35;1mUser Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`username` = 'admin') AND (users.retired = 0) LIMIT 1[0m
+
+NameError (uninitialized constant User::BCrypt):
+  app/models/user.rb:20:in `password'
+  app/models/user.rb:15:in `password_matches?'
+  app/controllers/user_controller.rb:15:in `login'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  devise (1.0.11) lib/devise/rails/warden_compat.rb:43:in `call'
+  passenger (4.0.41) lib/phusion_passenger/rack/thread_handler_extension.rb:74:in `process_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:141:in `accept_and_process_next_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:109:in `main_loop'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:448:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `initialize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `new'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `times'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `synchronize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:205:in `main_loop'
+  passenger (4.0.41) helper-scripts/classic-rails-preloader.rb:187
+
+Rendered rescues/_trace (165.4ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`username` = 'admin') LIMIT 1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`username` = 'admin') LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`username` = 'admin') LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`username` = 'admin') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserController#login (for 127.0.0.1 at 2014-06-08 18:12:48) [POST]
+  Parameters: {"commit"=>"Login", "user"=>{"password"=>"password", "username"=>"admin"}}
+  [4;35;1mUser Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`username` = 'admin') LIMIT 1[0m
+
+NameError (uninitialized constant User::BCrypt):
+  app/models/user.rb:20:in `password'
+  app/models/user.rb:15:in `password_matches?'
+  app/controllers/user_controller.rb:15:in `login'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  devise (1.0.11) lib/devise/rails/warden_compat.rb:43:in `call'
+  passenger (4.0.41) lib/phusion_passenger/rack/thread_handler_extension.rb:74:in `process_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:141:in `accept_and_process_next_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:109:in `main_loop'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:448:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `initialize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `new'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `times'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `synchronize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:205:in `main_loop'
+  passenger (4.0.41) helper-scripts/classic-rails-preloader.rb:187
+
+Rendered rescues/_trace (23.8ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`username` = 'admin') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'admin') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`username` = 'admin') LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'admin') LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`username` = 'admin') LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserController#login (for 127.0.0.1 at 2014-06-08 18:18:07) [GET]
+Rendering template within layouts/application
+Rendering user/login
+  [4;36;1mLocation Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `location`[0m
+  [4;35;1mGlobalProperty Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `global_property`[0m
+  [4;36;1mGlobalProperty Load (0.3ms)[0m   [0;1mSELECT * FROM `global_property` WHERE (`global_property`.`property` = 'current_health_center_id') LIMIT 1[0m
+  [4;35;1mLocation Load (0.3ms)[0m   [0mSELECT * FROM `location` WHERE (`location`.`location_id` = 10) AND (location.retired = 0) [0m
+Completed in 193ms (View: 186, DB: 5) | 200 OK [http://localhost/user/login]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserController#login (for 127.0.0.1 at 2014-06-08 18:18:12) [POST]
+  Parameters: {"commit"=>"Login", "user"=>{"password"=>"test", "username"=>"admin"}}
+  [4;35;1mUser Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`username` = 'admin') LIMIT 1[0m
+
+NameError (uninitialized constant User::BCrypt):
+  app/models/user.rb:20:in `password'
+  app/models/user.rb:15:in `password_matches?'
+  app/controllers/user_controller.rb:15:in `login'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  devise (1.0.11) lib/devise/rails/warden_compat.rb:43:in `call'
+  passenger (4.0.41) lib/phusion_passenger/rack/thread_handler_extension.rb:74:in `process_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:141:in `accept_and_process_next_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:109:in `main_loop'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:448:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `initialize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `new'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `times'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `synchronize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:205:in `main_loop'
+  passenger (4.0.41) helper-scripts/classic-rails-preloader.rb:187
+
+Rendered rescues/_trace (38.0ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserController#login (for 127.0.0.1 at 2014-06-08 18:19:00) [GET]
+Rendering template within layouts/application
+Rendering user/login
+  [4;35;1mLocation Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `location`[0m
+  [4;36;1mGlobalProperty Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `global_property`[0m
+  [4;35;1mGlobalProperty Load (0.2ms)[0m   [0mSELECT * FROM `global_property` WHERE (`global_property`.`property` = 'current_health_center_id') LIMIT 1[0m
+  [4;36;1mLocation Load (0.3ms)[0m   [0;1mSELECT * FROM `location` WHERE (`location`.`location_id` = 10) AND (location.retired = 0) [0m
+Completed in 41ms (View: 37, DB: 3) | 200 OK [http://localhost/user/login]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserController#login (for 127.0.0.1 at 2014-06-08 18:19:06) [POST]
+  Parameters: {"commit"=>"Login", "user"=>{"password"=>"password", "username"=>"admin"}}
+  [4;36;1mUser Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'admin') LIMIT 1[0m
+
+SystemStackError (stack level too deep):
+  app/models/user.rb:20:in `password'
+  app/models/user.rb:20:in `password'
+  app/models/user.rb:16:in `password_matches?'
+  app/controllers/user_controller.rb:15:in `login'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  devise (1.0.11) lib/devise/rails/warden_compat.rb:43:in `call'
+  passenger (4.0.41) lib/phusion_passenger/rack/thread_handler_extension.rb:74:in `process_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:141:in `accept_and_process_next_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:109:in `main_loop'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:448:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `initialize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `new'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `times'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `synchronize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:205:in `main_loop'
+  passenger (4.0.41) helper-scripts/classic-rails-preloader.rb:187
+
+Rendered rescues/_trace (65.5ms)
+Rendered rescues/_request_and_response (0.8ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#login (for 127.0.0.1 at 2014-06-08 18:21:17) [GET]
+
+LoadError (Expected /var/www/pepfar_reports/app/controllers/user_controller.rb to define UserController):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  devise (1.0.11) lib/devise/rails/warden_compat.rb:43:in `call'
+  passenger (4.0.41) lib/phusion_passenger/rack/thread_handler_extension.rb:74:in `process_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:141:in `accept_and_process_next_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:109:in `main_loop'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:448:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `initialize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `new'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `times'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `synchronize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:205:in `main_loop'
+  passenger (4.0.41) helper-scripts/classic-rails-preloader.rb:187
+
+Rendered rescues/_trace (20.8ms)
+Rendered rescues/_request_and_response (0.8ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserController#login (for 127.0.0.1 at 2014-06-08 18:21:48) [GET]
+
+NameError (undefined local variable or method `current_user' for #<UserController:0x7f00800d2aa0>):
+  app/controllers/user_controller.rb:5:in `login'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  devise (1.0.11) lib/devise/rails/warden_compat.rb:43:in `call'
+  passenger (4.0.41) lib/phusion_passenger/rack/thread_handler_extension.rb:74:in `process_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:141:in `accept_and_process_next_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:109:in `main_loop'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:448:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `initialize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `new'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `times'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `synchronize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:205:in `main_loop'
+  passenger (4.0.41) helper-scripts/classic-rails-preloader.rb:187
+
+Rendered rescues/_trace (22.7ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserController#login (for 127.0.0.1 at 2014-06-08 18:22:22) [GET]
+Rendering template within layouts/application
+Rendering user/login
+  [4;36;1mLocation Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `location`[0m
+  [4;35;1mGlobalProperty Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `global_property`[0m
+  [4;36;1mGlobalProperty Load (0.2ms)[0m   [0;1mSELECT * FROM `global_property` WHERE (`global_property`.`property` = 'current_health_center_id') LIMIT 1[0m
+  [4;35;1mLocation Load (0.1ms)[0m   [0mSELECT * FROM `location` WHERE (`location`.`location_id` = 10) AND (location.retired = 0) [0m
+Completed in 90ms (View: 84, DB: 4) | 200 OK [http://localhost/user/login]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserController#login (for 127.0.0.1 at 2014-06-08 18:22:29) [POST]
+  Parameters: {"commit"=>"Login", "user"=>{"password"=>"test", "username"=>"admin"}}
+  [4;35;1mUser Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`username` = 'admin') AND (users.retired = 0) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user/login
+  [4;35;1mLocation Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `location`[0m
+  [4;36;1mGlobalProperty Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `global_property`[0m
+  [4;35;1mGlobalProperty Load (0.1ms)[0m   [0mSELECT * FROM `global_property` WHERE (`global_property`.`property` = 'current_health_center_id') LIMIT 1[0m
+  [4;36;1mLocation Load (0.1ms)[0m   [0;1mSELECT * FROM `location` WHERE (`location`.`location_id` = 10) AND (location.retired = 0) [0m
+Completed in 34ms (View: 11, DB: 4) | 200 OK [http://localhost/user/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#login (for 127.0.0.1 at 2014-06-08 18:23:00) [GET]
+
+SyntaxError (/var/www/pepfar_reports/app/controllers/user_controller.rb:7: syntax error, unexpected ')', expecting kEND):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  devise (1.0.11) lib/devise/rails/warden_compat.rb:43:in `call'
+  passenger (4.0.41) lib/phusion_passenger/rack/thread_handler_extension.rb:74:in `process_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:141:in `accept_and_process_next_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:109:in `main_loop'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:448:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `initialize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `new'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `times'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `synchronize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:205:in `main_loop'
+  passenger (4.0.41) helper-scripts/classic-rails-preloader.rb:187
+
+Rendered rescues/_trace (18.3ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserController#login (for 127.0.0.1 at 2014-06-08 18:23:08) [GET]
+Rendering template within layouts/application
+Rendering user/login
+  [4;35;1mLocation Columns (2.7ms)[0m   [0mSHOW FIELDS FROM `location`[0m
+  [4;36;1mGlobalProperty Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `global_property`[0m
+  [4;35;1mGlobalProperty Load (0.4ms)[0m   [0mSELECT * FROM `global_property` WHERE (`global_property`.`property` = 'current_health_center_id') LIMIT 1[0m
+  [4;36;1mLocation Load (0.2ms)[0m   [0;1mSELECT * FROM `location` WHERE (`location`.`location_id` = 10) AND (location.retired = 0) [0m
+Completed in 21ms (View: 15, DB: 5) | 200 OK [http://localhost/user/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserController#login (for 127.0.0.1 at 2014-06-08 18:23:15) [POST]
+  Parameters: {"commit"=>"Login", "user"=>{"password"=>"password", "username"=>"admin"}}
+  [4;36;1mUser Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+
+ArgumentError (Unknown key(s): password, username):
+  app/controllers/user_controller.rb:7:in `login'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  devise (1.0.11) lib/devise/rails/warden_compat.rb:43:in `call'
+  passenger (4.0.41) lib/phusion_passenger/rack/thread_handler_extension.rb:74:in `process_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:141:in `accept_and_process_next_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:109:in `main_loop'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:448:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `initialize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `new'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `times'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `synchronize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:205:in `main_loop'
+  passenger (4.0.41) helper-scripts/classic-rails-preloader.rb:187
+
+Rendered rescues/_trace (22.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserController#login (for 127.0.0.1 at 2014-06-08 18:23:45) [POST]
+  Parameters: {"commit"=>"Login", "user"=>{"password"=>"password", "username"=>"admin"}}
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'admin') AND (users.retired = 0) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`username` = 'admin') AND (users.retired = 0) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user/login
+  [4;35;1mLocation Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `location`[0m
+  [4;36;1mGlobalProperty Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `global_property`[0m
+  [4;35;1mGlobalProperty Load (0.1ms)[0m   [0mSELECT * FROM `global_property` WHERE (`global_property`.`property` = 'current_health_center_id') LIMIT 1[0m
+  [4;36;1mLocation Load (0.1ms)[0m   [0;1mSELECT * FROM `location` WHERE (`location`.`location_id` = 10) AND (location.retired = 0) [0m
+Completed in 25ms (View: 8, DB: 3) | 200 OK [http://localhost/user/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserController#login (for 127.0.0.1 at 2014-06-08 18:23:51) [GET]
+Rendering template within layouts/application
+Rendering user/login
+  [4;36;1mLocation Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `location`[0m
+  [4;35;1mGlobalProperty Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `global_property`[0m
+  [4;36;1mGlobalProperty Load (0.1ms)[0m   [0;1mSELECT * FROM `global_property` WHERE (`global_property`.`property` = 'current_health_center_id') LIMIT 1[0m
+  [4;35;1mLocation Load (0.1ms)[0m   [0mSELECT * FROM `location` WHERE (`location`.`location_id` = 10) AND (location.retired = 0) [0m
+Completed in 18ms (View: 14, DB: 3) | 200 OK [http://localhost/user/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserController#login (for 127.0.0.1 at 2014-06-08 18:23:57) [POST]
+  Parameters: {"commit"=>"Login", "user"=>{"password"=>"test", "username"=>"admin"}}
+  [4;35;1mUser Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`username` = 'admin') AND (users.retired = 0) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'admin') AND (users.retired = 0) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user/login
+  [4;36;1mLocation Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `location`[0m
+  [4;35;1mGlobalProperty Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `global_property`[0m
+  [4;36;1mGlobalProperty Load (0.1ms)[0m   [0;1mSELECT * FROM `global_property` WHERE (`global_property`.`property` = 'current_health_center_id') LIMIT 1[0m
+  [4;35;1mLocation Load (0.2ms)[0m   [0mSELECT * FROM `location` WHERE (`location`.`location_id` = 10) AND (location.retired = 0) [0m
+Completed in 33ms (View: 18, DB: 4) | 200 OK [http://localhost/user/login]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserController#login (for 127.0.0.1 at 2014-06-08 18:24:13) [GET]
+Rendering template within layouts/application
+Rendering user/login
+  [4;35;1mLocation Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `location`[0m
+  [4;36;1mGlobalProperty Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `global_property`[0m
+  [4;35;1mGlobalProperty Load (0.2ms)[0m   [0mSELECT * FROM `global_property` WHERE (`global_property`.`property` = 'current_health_center_id') LIMIT 1[0m
+  [4;36;1mLocation Load (0.2ms)[0m   [0;1mSELECT * FROM `location` WHERE (`location`.`location_id` = 10) AND (location.retired = 0) [0m
+Completed in 30ms (View: 24, DB: 4) | 200 OK [http://localhost/user/login]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserController#login (for 127.0.0.1 at 2014-06-08 18:24:19) [POST]
+  Parameters: {"commit"=>"Login", "user"=>{"password"=>"test", "username"=>"admin"}}
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'admin') AND (users.retired = 0) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`username` = 'admin') AND (users.retired = 0) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user/login
+  [4;35;1mLocation Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `location`[0m
+  [4;36;1mGlobalProperty Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `global_property`[0m
+  [4;35;1mGlobalProperty Load (0.0ms)[0m   [0mSELECT * FROM `global_property` WHERE (`global_property`.`property` = 'current_health_center_id') LIMIT 1[0m
+  [4;36;1mLocation Load (0.1ms)[0m   [0;1mSELECT * FROM `location` WHERE (`location`.`location_id` = 10) AND (location.retired = 0) [0m
+Completed in 37ms (View: 8, DB: 5) | 200 OK [http://localhost/user/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserController#login (for 127.0.0.1 at 2014-06-08 18:24:57) [GET]
+Rendering template within layouts/application
+Rendering user/login
+  [4;36;1mLocation Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `location`[0m
+  [4;35;1mGlobalProperty Columns (0.3ms)[0m   [0mSHOW FIELDS FROM `global_property`[0m
+  [4;36;1mGlobalProperty Load (0.1ms)[0m   [0;1mSELECT * FROM `global_property` WHERE (`global_property`.`property` = 'current_health_center_id') LIMIT 1[0m
+  [4;35;1mLocation Load (0.0ms)[0m   [0mSELECT * FROM `location` WHERE (`location`.`location_id` = 10) AND (location.retired = 0) [0m
+Completed in 13ms (View: 10, DB: 1) | 200 OK [http://localhost/user/login]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserController#login (for 127.0.0.1 at 2014-06-08 18:25:04) [POST]
+  Parameters: {"commit"=>"Login", "user"=>{"password"=>"test", "username"=>"admin"}}
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`username` = 'admin') AND (users.retired = 0) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'admin') AND (users.retired = 0) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user/login
+  [4;36;1mLocation Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `location`[0m
+  [4;35;1mGlobalProperty Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `global_property`[0m
+  [4;36;1mGlobalProperty Load (0.1ms)[0m   [0;1mSELECT * FROM `global_property` WHERE (`global_property`.`property` = 'current_health_center_id') LIMIT 1[0m
+  [4;35;1mLocation Load (0.2ms)[0m   [0mSELECT * FROM `location` WHERE (`location`.`location_id` = 10) AND (location.retired = 0) [0m
+Completed in 26ms (View: 11, DB: 5) | 200 OK [http://localhost/user/login]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserController#login (for 127.0.0.1 at 2014-06-08 18:25:26) [GET]
+Rendering template within layouts/application
+Rendering user/login
+  [4;35;1mLocation Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `location`[0m
+  [4;36;1mGlobalProperty Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `global_property`[0m
+  [4;35;1mGlobalProperty Load (0.1ms)[0m   [0mSELECT * FROM `global_property` WHERE (`global_property`.`property` = 'current_health_center_id') LIMIT 1[0m
+  [4;36;1mLocation Load (0.1ms)[0m   [0;1mSELECT * FROM `location` WHERE (`location`.`location_id` = 10) AND (location.retired = 0) [0m
+Completed in 17ms (View: 12, DB: 4) | 200 OK [http://localhost/user/login]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserController#login (for 127.0.0.1 at 2014-06-08 18:25:34) [POST]
+  Parameters: {"commit"=>"Login", "user"=>{"password"=>"test", "username"=>"admin"}}
+  [4;36;1mUser Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'admin') AND (users.retired = 0) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`username` = 'admin') AND (users.retired = 0) LIMIT 1[0m
+
+RuntimeError (BBBBBBBBB):
+  app/controllers/user_controller.rb:29:in `login'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  devise (1.0.11) lib/devise/rails/warden_compat.rb:43:in `call'
+  passenger (4.0.41) lib/phusion_passenger/rack/thread_handler_extension.rb:74:in `process_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:141:in `accept_and_process_next_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:109:in `main_loop'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:448:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `initialize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `new'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `times'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `synchronize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:205:in `main_loop'
+  passenger (4.0.41) helper-scripts/classic-rails-preloader.rb:187
+
+Rendered rescues/_trace (57.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'admin') LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`username` = 'admin') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'admin') LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`username` = 'admin') LIMIT 1[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserController#login (for 127.0.0.1 at 2014-06-08 18:31:44) [POST]
+  Parameters: {"commit"=>"Login", "user"=>{"password"=>"test", "username"=>"admin"}}
+  [4;36;1mUser Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'admin') AND (users.retired = 0) LIMIT 1[0m
+
+RuntimeError (BBBBBBBBB):
+  app/controllers/user_controller.rb:29:in `login'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  devise (1.0.11) lib/devise/rails/warden_compat.rb:43:in `call'
+  passenger (4.0.41) lib/phusion_passenger/rack/thread_handler_extension.rb:74:in `process_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:141:in `accept_and_process_next_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:109:in `main_loop'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:448:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `initialize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `new'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `times'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `synchronize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:205:in `main_loop'
+  passenger (4.0.41) helper-scripts/classic-rails-preloader.rb:187
+
+Rendered rescues/_trace (21.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserController#login (for 127.0.0.1 at 2014-06-08 18:31:46) [GET]
+Rendering template within layouts/application
+Rendering user/login
+  [4;35;1mLocation Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `location`[0m
+  [4;36;1mGlobalProperty Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `global_property`[0m
+  [4;35;1mGlobalProperty Load (0.2ms)[0m   [0mSELECT * FROM `global_property` WHERE (`global_property`.`property` = 'current_health_center_id') LIMIT 1[0m
+  [4;36;1mLocation Load (0.3ms)[0m   [0;1mSELECT * FROM `location` WHERE (`location`.`location_id` = 10) AND (location.retired = 0) [0m
+Completed in 29ms (View: 24, DB: 4) | 200 OK [http://localhost/user/login]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserController#login (for 127.0.0.1 at 2014-06-08 18:31:50) [POST]
+  Parameters: {"commit"=>"Login", "user"=>{"password"=>"test", "username"=>"admin"}}
+  [4;36;1mUser Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'admin') AND (users.retired = 0) LIMIT 1[0m
+
+RuntimeError (BBBBBBBBB):
+  app/controllers/user_controller.rb:29:in `login'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  devise (1.0.11) lib/devise/rails/warden_compat.rb:43:in `call'
+  passenger (4.0.41) lib/phusion_passenger/rack/thread_handler_extension.rb:74:in `process_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:141:in `accept_and_process_next_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:109:in `main_loop'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:448:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `initialize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `new'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `times'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `synchronize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:205:in `main_loop'
+  passenger (4.0.41) helper-scripts/classic-rails-preloader.rb:187
+
+Rendered rescues/_trace (18.9ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`username` = 'admin') LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserController#login (for 127.0.0.1 at 2014-06-08 18:32:52) [POST]
+  Parameters: {"user"=>{"password"=>"test", "username"=>"admin"}, "commit"=>"Login"}
+  [4;35;1mUser Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`username` = 'admin') AND (users.retired = 0) LIMIT 1[0m
+
+RuntimeError (BBBBBBBBB):
+  app/controllers/user_controller.rb:29:in `login'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  devise (1.0.11) lib/devise/rails/warden_compat.rb:43:in `call'
+  passenger (4.0.41) lib/phusion_passenger/rack/thread_handler_extension.rb:74:in `process_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:141:in `accept_and_process_next_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:109:in `main_loop'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:448:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `initialize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `new'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `times'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `synchronize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:205:in `main_loop'
+  passenger (4.0.41) helper-scripts/classic-rails-preloader.rb:187
+
+Rendered rescues/_trace (77.2ms)
+Rendered rescues/_request_and_response (2.7ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserController#login (for 127.0.0.1 at 2014-06-08 18:32:58) [GET]
+Rendering template within layouts/application
+Rendering user/login
+  [4;36;1mLocation Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `location`[0m
+  [4;35;1mGlobalProperty Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `global_property`[0m
+  [4;36;1mGlobalProperty Load (0.1ms)[0m   [0;1mSELECT * FROM `global_property` WHERE (`global_property`.`property` = 'current_health_center_id') LIMIT 1[0m
+  [4;35;1mLocation Load (0.1ms)[0m   [0mSELECT * FROM `location` WHERE (`location`.`location_id` = 10) AND (location.retired = 0) [0m
+Completed in 73ms (View: 69, DB: 3) | 200 OK [http://localhost/user/login]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserController#login (for 127.0.0.1 at 2014-06-08 18:33:04) [POST]
+  Parameters: {"user"=>{"password"=>"test", "username"=>"admin"}, "commit"=>"Login"}
+  [4;35;1mUser Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`username` = 'admin') AND (users.retired = 0) LIMIT 1[0m
+
+RuntimeError (BBBBBBBBB):
+  app/controllers/user_controller.rb:29:in `login'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  devise (1.0.11) lib/devise/rails/warden_compat.rb:43:in `call'
+  passenger (4.0.41) lib/phusion_passenger/rack/thread_handler_extension.rb:74:in `process_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:141:in `accept_and_process_next_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:109:in `main_loop'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:448:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `initialize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `new'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `times'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `synchronize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:205:in `main_loop'
+  passenger (4.0.41) helper-scripts/classic-rails-preloader.rb:187
+
+Rendered rescues/_trace (18.6ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserController#login (for 127.0.0.1 at 2014-06-08 18:33:49) [GET]
+Rendering template within layouts/application
+Rendering user/login
+  [4;36;1mLocation Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `location`[0m
+  [4;35;1mGlobalProperty Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `global_property`[0m
+  [4;36;1mGlobalProperty Load (0.2ms)[0m   [0;1mSELECT * FROM `global_property` WHERE (`global_property`.`property` = 'current_health_center_id') LIMIT 1[0m
+  [4;35;1mLocation Load (0.2ms)[0m   [0mSELECT * FROM `location` WHERE (`location`.`location_id` = 10) AND (location.retired = 0) [0m
+Completed in 26ms (View: 21, DB: 4) | 200 OK [http://localhost/user/login]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserController#login (for 127.0.0.1 at 2014-06-08 18:33:55) [POST]
+  Parameters: {"user"=>{"password"=>"test", "username"=>"admin"}, "commit"=>"Login"}
+  [4;35;1mUser Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`username` = 'admin') AND (users.retired = 0) LIMIT 1[0m
+
+RuntimeError (BBBBBBBBB):
+  app/controllers/user_controller.rb:29:in `login'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  devise (1.0.11) lib/devise/rails/warden_compat.rb:43:in `call'
+  passenger (4.0.41) lib/phusion_passenger/rack/thread_handler_extension.rb:74:in `process_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:141:in `accept_and_process_next_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:109:in `main_loop'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:448:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `initialize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `new'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `times'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `synchronize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:205:in `main_loop'
+  passenger (4.0.41) helper-scripts/classic-rails-preloader.rb:187
+
+Rendered rescues/_trace (20.5ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserController#login (for 127.0.0.1 at 2014-06-08 18:34:19) [POST]
+  Parameters: {"user"=>{"password"=>"test", "username"=>"admin"}, "commit"=>"Login"}
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'admin') AND (users.retired = 0) LIMIT 1[0m
+
+RuntimeError (--- !ruby/object:User 
+attributes: 
+  system_id: 1-8
+  salt: c788c6ad82a157b712392ca695dfcf2eed193d7f
+  date_created: 2014-04-01 14:35:43
+  uuid: 2455fb87-b99a-11e3-8594-000acd1f3698
+  username: admin
+  password: 4a1750c8607d0fa237de36c6305715c223415189
+  retired_by: 
+  changed_by: "1"
+  authentication_token: Nvu5Xf_lttE_pDi6yays
+  secret_question: ""
+  person_id: "1"
+  secret_answer: 
+  creator: "1"
+  retire_reason: ""
+  date_changed: 2014-04-01 14:35:43
+  retired: "0"
+  user_id: "1"
+  date_retired: 
+attributes_cache: {}
+
+):
+  app/controllers/user_controller.rb:9:in `login'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  devise (1.0.11) lib/devise/rails/warden_compat.rb:43:in `call'
+  passenger (4.0.41) lib/phusion_passenger/rack/thread_handler_extension.rb:74:in `process_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:141:in `accept_and_process_next_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:109:in `main_loop'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:448:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `initialize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `new'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `times'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `synchronize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:205:in `main_loop'
+  passenger (4.0.41) helper-scripts/classic-rails-preloader.rb:187
+
+Rendered rescues/_trace (69.9ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserController#login (for 127.0.0.1 at 2014-06-08 18:34:43) [POST]
+  Parameters: {"user"=>{"password"=>"test", "username"=>"admin"}, "commit"=>"Login"}
+  [4;35;1mUser Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`username` = 'admin') AND (users.retired = 0) LIMIT 1[0m
+
+RuntimeError (--- !ruby/object:User 
+attributes: 
+  system_id: 1-8
+  salt: c788c6ad82a157b712392ca695dfcf2eed193d7f
+  date_created: 2014-04-01 14:35:43
+  uuid: 2455fb87-b99a-11e3-8594-000acd1f3698
+  username: admin
+  password: 4a1750c8607d0fa237de36c6305715c223415189
+  retired_by: 
+  changed_by: "1"
+  authentication_token: Nvu5Xf_lttE_pDi6yays
+  secret_question: ""
+  person_id: "1"
+  secret_answer: 
+  creator: "1"
+  retire_reason: ""
+  date_changed: 2014-04-01 14:35:43
+  retired: "0"
+  user_id: "1"
+  date_retired: 
+attributes_cache: {}
+
+):
+  app/controllers/user_controller.rb:9:in `login'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  devise (1.0.11) lib/devise/rails/warden_compat.rb:43:in `call'
+  passenger (4.0.41) lib/phusion_passenger/rack/thread_handler_extension.rb:74:in `process_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:141:in `accept_and_process_next_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:109:in `main_loop'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:448:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `initialize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `new'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `times'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `synchronize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:205:in `main_loop'
+  passenger (4.0.41) helper-scripts/classic-rails-preloader.rb:187
+
+Rendered rescues/_trace (22.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserController#login (for 127.0.0.1 at 2014-06-08 18:35:54) [POST]
+  Parameters: {"user"=>{"password"=>"test", "username"=>"admin"}, "commit"=>"Login"}
+  [4;36;1mUser Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'admin') AND (users.retired = 0) LIMIT 1[0m
+
+RuntimeError (--- !ruby/object:User 
+attributes: 
+  system_id: 1-8
+  salt: c788c6ad82a157b712392ca695dfcf2eed193d7f
+  date_created: 2014-04-01 14:35:43
+  uuid: 2455fb87-b99a-11e3-8594-000acd1f3698
+  username: admin
+  password: 4a1750c8607d0fa237de36c6305715c223415189
+  retired_by: 
+  changed_by: "1"
+  authentication_token: Nvu5Xf_lttE_pDi6yays
+  secret_question: ""
+  person_id: "1"
+  secret_answer: 
+  creator: "1"
+  retire_reason: ""
+  date_changed: 2014-04-01 14:35:43
+  retired: "0"
+  user_id: "1"
+  date_retired: 
+attributes_cache: {}
+
+):
+  app/controllers/user_controller.rb:9:in `login'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  devise (1.0.11) lib/devise/rails/warden_compat.rb:43:in `call'
+  passenger (4.0.41) lib/phusion_passenger/rack/thread_handler_extension.rb:74:in `process_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:141:in `accept_and_process_next_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:109:in `main_loop'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:448:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `initialize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `new'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `times'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `synchronize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:205:in `main_loop'
+  passenger (4.0.41) helper-scripts/classic-rails-preloader.rb:187
+
+Rendered rescues/_trace (63.0ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserController#login (for 127.0.0.1 at 2014-06-08 18:36:00) [GET]
+Rendering template within layouts/application
+Rendering user/login
+  [4;35;1mLocation Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `location`[0m
+  [4;36;1mGlobalProperty Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `global_property`[0m
+  [4;35;1mGlobalProperty Load (0.1ms)[0m   [0mSELECT * FROM `global_property` WHERE (`global_property`.`property` = 'current_health_center_id') LIMIT 1[0m
+  [4;36;1mLocation Load (0.1ms)[0m   [0;1mSELECT * FROM `location` WHERE (`location`.`location_id` = 10) AND (location.retired = 0) [0m
+Completed in 27ms (View: 21, DB: 2) | 200 OK [http://localhost/user/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserController#login (for 127.0.0.1 at 2014-06-08 18:36:06) [POST]
+  Parameters: {"user"=>{"password"=>"test", "username"=>"admin"}, "commit"=>"Login"}
+  [4;36;1mUser Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'admin') AND (users.retired = 0) LIMIT 1[0m
+
+RuntimeError (XXXXXXXXXXX):
+  app/controllers/user_controller.rb:10:in `login'
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  devise (1.0.11) lib/devise/rails/warden_compat.rb:43:in `call'
+  passenger (4.0.41) lib/phusion_passenger/rack/thread_handler_extension.rb:74:in `process_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:141:in `accept_and_process_next_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:109:in `main_loop'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:448:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `initialize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `new'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `times'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `synchronize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:205:in `main_loop'
+  passenger (4.0.41) helper-scripts/classic-rails-preloader.rb:187
+
+Rendered rescues/_trace (18.2ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AdministrationController#index (for 127.0.0.1 at 2014-06-08 18:37:39) [GET]
+
+ActionView::MissingTemplate (Missing template administration/index.erb in view path app/views:/home/mwatha/.rvm/gems/ruby-1.8.7-p374/gems/devise-1.0.11/app/views):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  devise (1.0.11) lib/devise/rails/warden_compat.rb:43:in `call'
+  passenger (4.0.41) lib/phusion_passenger/rack/thread_handler_extension.rb:74:in `process_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:141:in `accept_and_process_next_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:109:in `main_loop'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:448:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `initialize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `new'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `times'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `synchronize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:205:in `main_loop'
+  passenger (4.0.41) helper-scripts/classic-rails-preloader.rb:187
+
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AdministrationController#index (for 127.0.0.1 at 2014-06-08 18:37:47) [GET]
+
+ActionView::MissingTemplate (Missing template administration/index.erb in view path app/views:/home/mwatha/.rvm/gems/ruby-1.8.7-p374/gems/devise-1.0.11/app/views):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  devise (1.0.11) lib/devise/rails/warden_compat.rb:43:in `call'
+  passenger (4.0.41) lib/phusion_passenger/rack/thread_handler_extension.rb:74:in `process_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:141:in `accept_and_process_next_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:109:in `main_loop'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:448:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `initialize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `new'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `times'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `synchronize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:205:in `main_loop'
+  passenger (4.0.41) helper-scripts/classic-rails-preloader.rb:187
+
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AdministrationController#index (for 127.0.0.1 at 2014-06-08 18:38:12) [GET]
+
+ActionView::MissingTemplate (Missing template administration/index.erb in view path app/views:/home/mwatha/.rvm/gems/ruby-1.8.7-p374/gems/devise-1.0.11/app/views):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  devise (1.0.11) lib/devise/rails/warden_compat.rb:43:in `call'
+  passenger (4.0.41) lib/phusion_passenger/rack/thread_handler_extension.rb:74:in `process_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:141:in `accept_and_process_next_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:109:in `main_loop'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:448:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `initialize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `new'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `times'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `synchronize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:205:in `main_loop'
+  passenger (4.0.41) helper-scripts/classic-rails-preloader.rb:187
+
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AdministrationController#index (for 127.0.0.1 at 2014-06-08 18:40:02) [GET]
+
+ActionView::MissingTemplate (Missing template administration/index.erb in view path app/views:/home/mwatha/.rvm/gems/ruby-1.8.7-p374/gems/devise-1.0.11/app/views):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  devise (1.0.11) lib/devise/rails/warden_compat.rb:43:in `call'
+  passenger (4.0.41) lib/phusion_passenger/rack/thread_handler_extension.rb:74:in `process_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:141:in `accept_and_process_next_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:109:in `main_loop'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:448:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `initialize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `new'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `times'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `synchronize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:205:in `main_loop'
+  passenger (4.0.41) helper-scripts/classic-rails-preloader.rb:187
+
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AdministrationController#index (for 127.0.0.1 at 2014-06-08 20:12:04) [GET]
+
+ActionView::MissingTemplate (Missing template administration/index.erb in view path app/views:/home/mwatha/.rvm/gems/ruby-1.8.7-p374/gems/devise-1.0.11/app/views):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  devise (1.0.11) lib/devise/rails/warden_compat.rb:43:in `call'
+  passenger (4.0.41) lib/phusion_passenger/rack/thread_handler_extension.rb:74:in `process_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:141:in `accept_and_process_next_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:109:in `main_loop'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:448:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `initialize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `new'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `times'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `synchronize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:205:in `main_loop'
+  passenger (4.0.41) helper-scripts/classic-rails-preloader.rb:187
+
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserController#login (for 127.0.0.1 at 2014-06-08 20:12:28) [GET]
+Rendering template within layouts/application
+Rendering user/login
+  [4;36;1mLocation Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `location`[0m
+  [4;35;1mGlobalProperty Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `global_property`[0m
+  [4;36;1mGlobalProperty Load (0.2ms)[0m   [0;1mSELECT * FROM `global_property` WHERE (`global_property`.`property` = 'current_health_center_id') LIMIT 1[0m
+  [4;35;1mLocation Load (0.1ms)[0m   [0mSELECT * FROM `location` WHERE (`location`.`location_id` = 10) AND (location.retired = 0) [0m
+Completed in 39ms (View: 35, DB: 3) | 200 OK [http://localhost/user/login]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserController#login (for 127.0.0.1 at 2014-06-08 20:12:33) [POST]
+  Parameters: {"commit"=>"Login", "user"=>{"password"=>"test", "username"=>"admin"}}
+  [4;35;1mUser Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (6.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`username` = 'admin') AND (users.retired = 0) LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 61ms (DB: 7) | 302 Found [http://localhost/user/login]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AdministrationController#index (for 127.0.0.1 at 2014-06-08 20:12:33) [GET]
+
+ActionView::MissingTemplate (Missing template administration/index.erb in view path app/views:/home/mwatha/.rvm/gems/ruby-1.8.7-p374/gems/devise-1.0.11/app/views):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  devise (1.0.11) lib/devise/rails/warden_compat.rb:43:in `call'
+  passenger (4.0.41) lib/phusion_passenger/rack/thread_handler_extension.rb:74:in `process_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:141:in `accept_and_process_next_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:109:in `main_loop'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:448:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `initialize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `new'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `times'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `synchronize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:205:in `main_loop'
+  passenger (4.0.41) helper-scripts/classic-rails-preloader.rb:187
+
+Rendering rescues/layout (internal_server_error)

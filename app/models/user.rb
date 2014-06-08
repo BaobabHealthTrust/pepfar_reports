@@ -73,8 +73,8 @@ class User < ActiveRecord::Base
 		"#{name.given_name} #{name.family_name}"
 	end
 
-	def try_to_login
-		User.authenticate(self.username, self.password)
+	def try_to_login(passed_password)
+    self.valid_password?(passed_password) ? self : nil
 	end
 
 	def password_salt

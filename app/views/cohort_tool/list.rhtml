@@ -149,20 +149,22 @@ thead {
 			<thead>
                            <tr>
 
-                                                        <th width="100%" style="font-size:23px;" colspan="2">Patients in category : <%= @category %> With <%= @data.length %> patients
+                                                        <th width="100%" style="font-size:23px;" colspan="3">Patients in category : <%= @category %> With <%= @data.length %> patients
                                                          </th>
 					</tr>
                                       <tr>
 
                                                         <th width="50%">Patient ID</th>
-                                                        <th width="50%" align="right">ARV Number</th>
+                                                        <th width="25%" align="right">ARV Number</th>
+                                                        <th width="25%" align="right">Gender</th>
 					</tr>
                          
                                       <% @data.each{|data| %>
                                         <tr>
 
                                                         <th width="50%"><%= data[0]   %></th>
-                                                        <th width="50%" align="right"><%= data[1]   %></th>
+                                                        <th width="25%" align="right"><%= data[1]   %></th>
+                                                        <th width="25%" align="right"><%= data[2]   %></th>
 					</tr>
                                         <% } %>
                          </thead>

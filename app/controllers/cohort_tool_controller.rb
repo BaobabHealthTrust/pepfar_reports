@@ -80,12 +80,14 @@ def monthly_survival
     return [] if session[:ids].blank?
     patients_ids = []
     PatientProgram.find_by_sql("
-                    SELECT p.patient_id, p.identifier FROM earliest_start_date e
+                    SELECT p.patient_id, p.identifier, pe.gender FROM earliest_start_date e
                     LEFT JOIN patient_identifier p ON e.patient_id = p.patient_id
-                    WHERE e.age_at_initiation >= #{min} AND e.age_at_initiation < #{max}  
+                    INNER JOIN person pe ON pe.person_id = p.patient_id
+                    WHERE e.age_at_initiation >= #{min} AND e.age_at_initiation < #{max}
+                    AND p.voided = 0
                     AND p.identifier_type = 4 AND p.patient_id IN (#{session[:ids].join(',')})
                    ").each do | patient |
-				patients_ids << [patient.patient_id, patient.identifier]
+				patients_ids << [patient.patient_id, patient.identifier, patient.gender]
      end
      return patients_ids
   end
@@ -94,11 +96,12 @@ def monthly_survival
     return [] if ids.blank?
     patients_ids = []
     PatientProgram.find_by_sql("
-                    SELECT e.patient_id, p.identifier FROM earliest_start_date e
+                    SELECT e.patient_id, p.identifier, pe.gender FROM earliest_start_date e
                     LEFT JOIN patient_identifier p ON e.patient_id = p.patient_id
-                    WHERE p.identifier_type = 4 AND p.patient_id IN (#{ids.join(',')})
+                    INNER JOIN person pe ON pe.person_id = p.patient_id
+                    WHERE p.identifier_type = 4 AND p.voided = 0 AND p.patient_id IN (#{ids.join(',')})
                    ").each do | patient |
-				patients_ids << [patient.patient_id, patient.identifier]
+				patients_ids << [patient.patient_id, patient.identifier, patient.gender]
      end
      return patients_ids
   end

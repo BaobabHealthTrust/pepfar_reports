@@ -8,6 +8,7 @@ class UserController < ApplicationController
       logged_in_user = user.try_to_login(params[:user]['password'])
       if not logged_in_user.blank?
         reset_session
+        session[:current_user_id] = user.id
         redirect_to("/")
       else
         flash[:error] = "Invalid username or password"

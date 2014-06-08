@@ -301,4 +301,82 @@ ORDER BY clinic ASC"])
     return demographics
   end
 
+  def self.total_registered(start_date, end_date)
+    total_registered = {}
+
+    result = Encounter.find_by_sql("SELECT * FROM earliest_start_date e
+      INNER JOIN person p ON p.person_id = e.patient_id AND p.voided = 0 
+      WHERE e.earliest_start_date BETWEEN '#{start_date}' AND '#{end_date}'
+      AND (LEFT(e.date_enrolled,10) = e.earliest_start_date) 
+      GROUP BY e.patient_id;")
+
+    unless result.blank?
+      result.each do |r|
+        gender =  r.gender.upcase rescue nil
+        next if gender.blank?
+        if total_registered[r.patient_id].blank? 
+          total_registered[r.patient_id] = []
+
+          total_registered[r.patient_id] = {
+            :earliest_start_date =>  r.earliest_start_date,
+            :age_at_initiation => r.age_at_initiation,
+            :gender => gender
+          }
+        end
+      end
+    end
+    return total_registered
+  end
+
+  def self.followup_months(patients_to_follow, start_date)
+    end_date = start_date.end_of_month
+    patient_ids = patients_to_follow.join(',')
+
+    result = Encounter.find_by_sql("SELECT p.person_id,i.identifier arv_number,
+      e.age_at_initiation, current_state_for_program(e.patient_id, 1, '#{end_date}') outcome,
+      p.gender gender, p.birthdate, e.earliest_start_date
+      FROM earliest_start_date e
+      INNER JOIN person p ON p.person_id = e.patient_id 
+      RIGHT JOIN patient_identifier i ON i.patient_id = e.patient_id 
+      AND i.voided = 0 AND i.identifier_type = 4
+      WHERE e.patient_id IN(#{patient_ids}) GROUP BY e.patient_id")
+   
+
+    followup_patients = {}
+    (result || []).each do |r|
+      if followup_patients[r.person_id].blank?
+        followup_patients[r.person_id] = []
+      end
+      
+      followup_patients[r.person_id] = {
+        :earliest_start_date =>  r.earliest_start_date,
+        :age_at_initiation => r.age_at_initiation,
+        :gender => r.gender, :outcome => self.get_outcome(r.person_id,r.outcome,end_date),
+        :arv_number => r.arv_number,:dob => r.birthdate
+      }
+    end
+    followup_patients
+  end
+
+  def self.get_outcome(patient_id,outcome,end_date)
+    case outcome 
+      when  '7'
+        defaulter = Encounter.find_by_sql("SELECT current_defaulter(#{patient_id},'#{end_date}') as outcome;")
+        if defaulter.last.outcome == '1'
+          return 'Defaulter'
+        end
+        return 'On ART'
+      when '3'
+        return 'Died'
+      when '2'
+        return 'Transfered out'
+      when '3'
+        return 'Died'
+      when '6'
+        return 'Treatement stopped'
+      else
+        return 'Unknown'
+    end
+  end
+
 end

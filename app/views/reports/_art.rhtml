@@ -1,0 +1,98 @@
+<style>
+  .data-content th , td{
+    padding-left: 10px;
+  }
+
+  .data-content td {
+    border-style: solid;
+    border-width: 1px;
+  }
+</style>
+
+
+<%if not @total_registered.blank?%>
+<div class="table-header">
+  Patients registered - on ART:&nbsp;<%=@start_date%>&nbsp;to&nbsp;<%=@end_date%>
+</div>
+
+<table style="width: 100%;" class="data-content">
+  <thead>
+  <tr>
+    <th>Total registered: Male</th>
+    <th>Total registered: Female</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <%male = 0 ; female = 0
+  (@total_registered || {}).each do |patient_id, data|
+    male += 1 if data[:gender] == 'M' 
+    female += 1 if data[:gender] == 'F' 
+  end%>
+  <tr>
+    <td><%=male%></td>
+    <td><%=female%></td>
+  </tr>
+  <tbody>
+
+</table>
+
+<br />
+
+
+<table style="width: 50%;" class="data-content">
+  <thead>
+  <tr>
+  </tr>
+  </thead>
+
+  <tbody>
+  <%(@followup_months || {}).sort_by{|k,d| k.to_date}.each do |month, data|%>
+  <tr style="background-color: lightblue;">
+    <th>Month</th>
+    <th><%=month%></th>
+  </tr>
+    <%
+    on_art = 0 ; defaulter = 0 ; died = 0
+    to = 0 ; ts = 0 ; unknown = 0
+    test = Hash.new(0)
+    (data || {}).each do |patient_id, patient_attr|
+      on_art += 1 if patient_attr[:outcome] == 'On ART'
+      defaulter += 1 if patient_attr[:outcome] == 'Defaulter'
+      died += 1 if patient_attr[:outcome] == 'Died'
+      to += 1 if patient_attr[:outcome] == 'Transfered out'
+      ts += 1 if patient_attr[:outcome] == 'Treatement stopped'
+      unknown += 1 if patient_attr[:outcome] == 'Unknown'
+      test[patient_attr[:outcome]] += 1
+    end%>
+    <tr>
+      <td>On ART</td>
+      <td><%=on_art%></td>
+    </tr>
+    <tr>
+      <td>Transfered out</td>
+      <td><%=to%></td>
+    </tr>
+    <tr>
+      <td>Treatement stopped</td>
+      <td><%=ts%></td>
+    </tr>
+    <tr>
+      <td>Defaulter</td>
+      <td><%=defaulter%></td>
+    </tr>
+    <tr>
+      <td>Died</td>
+      <td><%=died%></td>
+    </tr>
+    <tr>
+      <td>Unknown</td>
+      <td><%=unknown%></td>
+    </tr>
+  <%end%>
+  <tbody>
+
+</table>
+
+
+<%end%>

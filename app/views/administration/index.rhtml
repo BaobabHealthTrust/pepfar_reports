@@ -228,17 +228,17 @@
 					</tr>
                                         <tr>
 
-                                                        <th width="50%">Less 1yr</th>
+                                                        <th width="50%"><a href="list?id=0_to_1">Less 1yr</a></th>
                                                         <th width="50%" align="right"><%=  @age["less1"] %></th>
 					</tr>
                                         <tr>
 
-                                                        <th width="50%"> 1yr to 15yrs</th>
+                                                        <th width="50%"><a href="list?id=1_to_15"> 1yr to 15yrs</a></th>
                                                         <th width="50%" align="right"><%=  @age["less15"] %></th>
 					</tr>
                                         <tr>
 
-                                                        <th width="50%">More than 15yrs</th>
+                                                        <th width="50%"><a href="list?id=15_to_100">More than 15yrs</a></th>
                                                         <th width="50%" align="right"><%=  @age["more15"] %></th>
 					</tr>
                                         <tr>
@@ -247,13 +247,17 @@
                                         </tr>
                                         <tr>
 
-                                                        <th width="50%">Defaulters</th>
+                                          <th width="100%" colspan="2"><hr></th>
+                                        </tr>
+                                        <tr>
+
+                                                        <th width="50%"><a href="list?id=defaulted">Defaulters</a></th>
                                                         <th width="50%" align="right"><%= @def_ids.length  %></th>
 					</tr>
                                       <% @outcome.each{|outc, total| %>
                                         <tr>
 
-                                                        <th width="50%"><%= outc   %></th>
+                                                        <th width="50%"><a href="list?id='<%= outc %>'"><%= outc   %></a></th>
                                                         <th width="50%" align="right"><%= total.length  %></th>
 					</tr>
                                         <% } %>

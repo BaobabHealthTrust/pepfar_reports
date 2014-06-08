@@ -44,24 +44,31 @@ def monthly_survival
   end
 
   def list
+    #raise params.to_yaml
     if params[:id] == "0_to_1"
       @data = drill_ages(0, 1)
-      
+      @category = "Age - 0 to 1"
     elsif params[:id] == "1_to_15"
       @data = drill_ages(1, 15)
-      #raise @data.to_yaml
+      @category = "Age - 1 to 15"
     elsif params[:id] == "15_to_100"
       @data = drill_ages(15, 1000)
+      @category = "Age - Above 15"
     elsif params[:id] == "defaulted"
       @data = drill_outcomes(session[:defaulters])
+      @category = "Outcome - Defaulters"
     elsif params[:id] == "Died"
       @data = drill_outcomes(session[:died])
+      @category = "Outcome - Died"
     elsif params[:id] == "Alive and on treatment"
        @data = drill_outcomes(session[:alive])
+       @category = "Outcome - Alive and on treatment"
     elsif params[:id] == "Transferred out"
        @data = drill_outcomes(session[:transferred])
+       @category = "Outcome - Transferred out"
     elsif params[:id] == "Unknown"
        @data = drill_outcomes(session[:unknown])
+       @category = "Outcome - Unknown"
     end
     
   end

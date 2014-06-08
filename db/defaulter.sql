@@ -1,4 +1,5 @@
 delimiter $$
+DROP FUNCTION IF EXISTS `current_defaulter`;
 
 CREATE DEFINER=`root`@`localhost` FUNCTION `current_defaulter`(my_patient_id INT, my_end_date DATETIME) RETURNS int(1)
 BEGIN

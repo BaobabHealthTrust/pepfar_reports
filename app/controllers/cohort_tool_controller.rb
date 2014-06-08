@@ -77,6 +77,7 @@ def monthly_survival
   end
    
   def drill_ages(min, max)
+    return [] if session[:ids].blank?
     patients_ids = []
     PatientProgram.find_by_sql("
                     SELECT p.patient_id, p.identifier FROM earliest_start_date e
@@ -90,6 +91,7 @@ def monthly_survival
   end
 
   def drill_outcomes(ids)
+    return [] if ids.blank?
     patients_ids = []
     PatientProgram.find_by_sql("
                     SELECT e.patient_id, p.identifier FROM earliest_start_date e
@@ -113,6 +115,9 @@ def monthly_survival
   end
 
   def art_patients(start_date, end_date, retained_date, ids)
+    unless ids.blank?
+      conditions = " AND e.patient_id NOT IN (#{ids})"
+    end
     patients_ids = []
     patients_ages = []
     patient_outcome = {}
@@ -124,8 +129,8 @@ def monthly_survival
                                 INNER JOIN  program_workflow_state pw ON pw.program_workflow_state_id = current_state_for_program(p.patient_id, 1, '#{retained_date}')
                                 INNER join earliest_start_date e ON e.patient_id = p.patient_id
                                 INNER JOIN concept_name c ON c.concept_id = pw.concept_id
-                                WHERE earliest_start_date >= '#{start_date}' AND earliest_start_date  <= '#{end_date}'
-                                AND e.patient_id NOT IN (#{ids}) AND DATE(e.date_enrolled) = DATE(e.earliest_start_date)").each do | patient |
+                                WHERE earliest_start_date >= '#{start_date}' AND earliest_start_date  <= '#{end_date}' #{conditions}
+                                 AND DATE(e.date_enrolled) = DATE(e.earliest_start_date)").each do | patient |
       next if patients_ids.include?(patient.patient_id)
       patients_ids << patient.patient_id
       patients_ages << patient.age #rescue "N/A"

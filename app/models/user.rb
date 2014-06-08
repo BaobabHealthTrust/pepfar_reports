@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
 	before_save :set_password, :before_create
 	
 	attr :plain_password
-	#cattr_accessor :current_user
+	#attr_accessor :current_user
 	attr_accessor :plain_password
 	attr_accessor :password_salt
 	attr_accessor :encrypted_password
@@ -73,8 +73,8 @@ class User < ActiveRecord::Base
 		"#{name.given_name} #{name.family_name}"
 	end
 
-	def try_to_login
-		User.authenticate(self.username, self.password)
+	def try_to_login(passed_password)
+    self.valid_password?(passed_password) ? self : nil
 	end
 
 	def password_salt

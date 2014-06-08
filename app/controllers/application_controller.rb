@@ -16,13 +16,13 @@ class ApplicationController < ActionController::Base
                                                                                  
   protected                                                                     
                                                                                 
-  def perform_basic_auth                                                        
+  def verify_authenticity_token                                     
     if session[:current_user_id].blank?                                                 
       respond_to do |format|                                                    
         format.html { redirect_to :controller => 'user',:action => 'logout' }   
       end                                                                       
     elsif not session[:current_user_id].blank?                                          
-      User.current_user = User.where(:'id' => session[:user_id]).first        
+      User.current = User.find(session[:current_user_id])
     end                                                                         
   end 
 

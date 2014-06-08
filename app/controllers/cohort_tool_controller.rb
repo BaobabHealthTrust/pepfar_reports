@@ -46,59 +46,91 @@ def monthly_survival
   def list
     #raise params.to_yaml
     if params[:id] == "0_to_1"
-      @data = drill_ages(0, 1)
+      @data, @male, @female = drill_ages(0, 1)
       @category = "Age - 0 to 1"
     elsif params[:id] == "1_to_15"
-      @data = drill_ages(1, 15)
+      @data, @male, @female = drill_ages(1, 15)
       @category = "Age - 1 to 15"
     elsif params[:id] == "15_to_100"
-      @data = drill_ages(15, 1000)
+      @data, @male, @female = drill_ages(15, 1000)
       @category = "Age - Above 15"
+    elsif params[:id] == "total"
+      @data, @male, @female = drill_outcomes(session[:ids])
+      @category = "Total Registered"
     elsif params[:id] == "defaulted"
-      @data = drill_outcomes(session[:defaulters])
+      @data, @male, @female = drill_outcomes(session[:defaulters])
       @category = "Outcome - Defaulters"
     elsif params[:id] == "Died"
-      @data = drill_outcomes(session[:died])
+      @data, @male, @female = drill_outcomes(session[:died])
       @category = "Outcome - Died"
     elsif params[:id] == "Alive and on treatment"
-       @data = drill_outcomes(session[:alive])
+       @data, @male, @female = drill_outcomes(session[:alive])
        @category = "Outcome - Alive and on treatment"
     elsif params[:id] == "Transferred out"
-       @data = drill_outcomes(session[:transferred])
+       @data, @male, @female = drill_outcomes(session[:transferred])
        @category = "Outcome - Transferred out"
     elsif params[:id] == "Unknown"
-       @data = drill_outcomes(session[:unknown])
+       @data, @male, @female = drill_outcomes(session[:unknown])
        @category = "Outcome - Unknown"
     end
     
   end
    
   def drill_ages(min, max)
+    return [] if session[:ids].blank?
     patients_ids = []
+    total_male = 0
+    total_female = 0
     PatientProgram.find_by_sql("
-                    SELECT p.patient_id, p.identifier FROM earliest_start_date e
+                    SELECT p.patient_id, p.identifier, pe.gender FROM earliest_start_date e
                     LEFT JOIN patient_identifier p ON e.patient_id = p.patient_id
-                    WHERE e.age_at_initiation >= #{min} AND e.age_at_initiation < #{max}  
+                    INNER JOIN person pe ON pe.person_id = p.patient_id
+                    WHERE e.age_at_initiation >= #{min} AND e.age_at_initiation < #{max}
+                    AND p.voided = 0
                     AND p.identifier_type = 4 AND p.patient_id IN (#{session[:ids].join(',')})
                    ").each do | patient |
-				patients_ids << [patient.patient_id, patient.identifier]
+				patients_ids << [patient.patient_id, patient.identifier, patient.gender]
+        total_male += 1 if patient.gender.upcase == "M"
+        total_female += 1 if patient.gender.upcase == "F"
      end
-     return patients_ids
+     return patients_ids, total_male, total_female
   end
 
-    def drill_outcomes(ids)
+  def drill_outcomes(ids)
+    return [] if ids.blank?
+    patients_ids = []
+
+    total_male = 0
+    total_female = 0
+
+    PatientProgram.find_by_sql("
+                    SELECT e.patient_id, p.identifier, pe.gender FROM earliest_start_date e
+                    LEFT JOIN patient_identifier p ON e.patient_id = p.patient_id
+                    INNER JOIN person pe ON pe.person_id = p.patient_id
+                    WHERE p.identifier_type = 4 AND p.voided = 0 AND p.patient_id IN (#{ids.join(',')})
+                   ").each do | patient |
+				patients_ids << [patient.patient_id, patient.identifier, patient.gender]
+        total_male += 1 if patient.gender.upcase == "M"
+        total_female += 1 if patient.gender.upcase == "F"
+     end
+     return patients_ids, total_male, total_female
+  end
+
+  def pre_art(start_date, end_date)
     patients_ids = []
     PatientProgram.find_by_sql("
-                    SELECT p.patient_id, p.identifier FROM earliest_start_date e
-                    LEFT JOIN patient_identifier p ON e.patient_id = p.patient_id
-                    WHERE p.identifier_type = 4 AND p.patient_id IN (#{ids.join(',')})
-                   ").each do | patient |
-				patients_ids << [patient.patient_id, patient.identifier]
-     end
-     return patients_ids
+                    SELECT p.patient_id, (SELECT MIN(obs_datetime) FROM obs o WHERE o.person_id = p.patient_id) current FROM patient p
+                    WHERE p.voided = 0 AND DATE(current) >= '#{start_date}' AND DATE(current) <= '#{end_date}'").each{|patient|
+                    patients_ids << [patient.patient_id, patient.current]
+                    }
+
+    return patients_ids
   end
 
   def art_patients(start_date, end_date, retained_date, ids)
+    unless ids.blank?
+      conditions = " AND e.patient_id NOT IN (#{ids})"
+    end
     patients_ids = []
     patients_ages = []
     patient_outcome = {}
@@ -110,8 +142,8 @@ def monthly_survival
                                 INNER JOIN  program_workflow_state pw ON pw.program_workflow_state_id = current_state_for_program(p.patient_id, 1, '#{retained_date}')
                                 INNER join earliest_start_date e ON e.patient_id = p.patient_id
                                 INNER JOIN concept_name c ON c.concept_id = pw.concept_id
-                                WHERE earliest_start_date >= '#{start_date}' AND earliest_start_date  <= '#{end_date}'
-                                AND e.patient_id NOT IN (#{ids})").each do | patient |
+                                WHERE earliest_start_date >= '#{start_date}' AND earliest_start_date  <= '#{end_date}' #{conditions}
+                                 AND DATE(e.date_enrolled) = DATE(e.earliest_start_date)").each do | patient |
       next if patients_ids.include?(patient.patient_id)
       patients_ids << patient.patient_id
       patients_ages << patient.age #rescue "N/A"
@@ -145,6 +177,7 @@ def monthly_survival
 		 PatientProgram.find_by_sql("SELECT e.patient_id, e.age_at_initiation AS age, current_defaulter(patient_id, '#{retained_date}') AS def
 											FROM earliest_start_date e LEFT JOIN person p ON p.person_id = e.patient_id
 											WHERE e.earliest_start_date >= '#{start_date}' AND e.earliest_start_date <=  '#{end_date}' AND p.dead=0
+                      AND DATE(e.date_enrolled) = DATE(e.earliest_start_date)
 											HAVING def = 1 AND current_state_for_program(patient_id, 1, '#{retained_date}') NOT IN (6, 2, 3)").each do | patient |
 				next if patients_ids.include?(patient.patient_id)
         patients_ids << patient.patient_id

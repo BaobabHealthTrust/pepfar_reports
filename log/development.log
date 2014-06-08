@@ -31024,3 +31024,1274 @@ Rendered reports/_art (1.7ms)
   [4;35;1mGlobalProperty Load (0.2ms)[0m   [0mSELECT * FROM `global_property` WHERE (`global_property`.`property` = 'current_health_center_id') LIMIT 1[0m
   [4;36;1mLocation Load (0.2ms)[0m   [0;1mSELECT * FROM `location` WHERE (`location`.`location_id` = 10) AND (location.retired = 0) [0m
 Completed in 33570ms (View: 20, DB: 33334) | 200 OK [http://localhost/reports/on_art?start_date=01-07-2012&end_date=31-07-2012&age=1%20to%2014]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-09 00:43:50) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/DatePicker/img/boxTopLeftCorner.png" with {:method=>:get}):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  devise (1.0.11) lib/devise/rails/warden_compat.rb:43:in `call'
+  passenger (4.0.41) lib/phusion_passenger/rack/thread_handler_extension.rb:74:in `process_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:141:in `accept_and_process_next_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:109:in `main_loop'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:448:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `initialize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `new'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `times'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `synchronize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:205:in `main_loop'
+  passenger (4.0.41) helper-scripts/classic-rails-preloader.rb:187
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-09 00:43:50) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/DatePicker/img/boxSideWallPx.gif" with {:method=>:get}):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  devise (1.0.11) lib/devise/rails/warden_compat.rb:43:in `call'
+  passenger (4.0.41) lib/phusion_passenger/rack/thread_handler_extension.rb:74:in `process_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:141:in `accept_and_process_next_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:109:in `main_loop'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:448:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `initialize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `new'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `times'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `synchronize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:205:in `main_loop'
+  passenger (4.0.41) helper-scripts/classic-rails-preloader.rb:187
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-09 00:43:50) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/DatePicker/img/boxBottomLeftCorner.png" with {:method=>:get}):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  devise (1.0.11) lib/devise/rails/warden_compat.rb:43:in `call'
+  passenger (4.0.41) lib/phusion_passenger/rack/thread_handler_extension.rb:74:in `process_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:141:in `accept_and_process_next_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:109:in `main_loop'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:448:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `initialize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `new'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `times'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `synchronize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:205:in `main_loop'
+  passenger (4.0.41) helper-scripts/classic-rails-preloader.rb:187
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-09 00:43:50) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/DatePicker/img/monthForward_normal.gif" with {:method=>:get}):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  devise (1.0.11) lib/devise/rails/warden_compat.rb:43:in `call'
+  passenger (4.0.41) lib/phusion_passenger/rack/thread_handler_extension.rb:74:in `process_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:141:in `accept_and_process_next_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:109:in `main_loop'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:448:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `initialize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `new'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `times'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `synchronize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:205:in `main_loop'
+  passenger (4.0.41) helper-scripts/classic-rails-preloader.rb:187
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-09 00:43:50) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/DatePicker/img/monthBackward_normal.gif" with {:method=>:get}):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  devise (1.0.11) lib/devise/rails/warden_compat.rb:43:in `call'
+  passenger (4.0.41) lib/phusion_passenger/rack/thread_handler_extension.rb:74:in `process_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:141:in `accept_and_process_next_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:109:in `main_loop'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:448:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `initialize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `new'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `times'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `synchronize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:205:in `main_loop'
+  passenger (4.0.41) helper-scripts/classic-rails-preloader.rb:187
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-09 00:43:50) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/DatePicker/img/yearForward_normal.gif" with {:method=>:get}):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  devise (1.0.11) lib/devise/rails/warden_compat.rb:43:in `call'
+  passenger (4.0.41) lib/phusion_passenger/rack/thread_handler_extension.rb:74:in `process_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:141:in `accept_and_process_next_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:109:in `main_loop'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:448:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `initialize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `new'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `times'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `synchronize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:205:in `main_loop'
+  passenger (4.0.41) helper-scripts/classic-rails-preloader.rb:187
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-09 00:43:50) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/DatePicker/img/yearBackward_normal.gif" with {:method=>:get}):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  devise (1.0.11) lib/devise/rails/warden_compat.rb:43:in `call'
+  passenger (4.0.41) lib/phusion_passenger/rack/thread_handler_extension.rb:74:in `process_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:141:in `accept_and_process_next_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:109:in `main_loop'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:448:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `initialize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `new'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `times'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `synchronize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:205:in `main_loop'
+  passenger (4.0.41) helper-scripts/classic-rails-preloader.rb:187
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReportsController#img to gif (for 127.0.0.1 at 2014-06-09 00:43:50) [GET]
+  Parameters: {"id"=>"beige_dayNormal"}
+  [4;35;1mUser Columns (2.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`user_id` = 1) AND (users.retired = 0) [0m
+
+ActionController::UnknownAction (No action responded to img. Actions: admin?, check_authorized, and on_art):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  devise (1.0.11) lib/devise/rails/warden_compat.rb:43:in `call'
+  passenger (4.0.41) lib/phusion_passenger/rack/thread_handler_extension.rb:74:in `process_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:141:in `accept_and_process_next_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:109:in `main_loop'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:448:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `initialize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `new'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `times'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `synchronize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:205:in `main_loop'
+  passenger (4.0.41) helper-scripts/classic-rails-preloader.rb:187
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReportsController#img to gif (for 127.0.0.1 at 2014-06-09 00:43:50) [GET]
+  Parameters: {"id"=>"beige_dayDown"}
+  [4;36;1mUser Columns (3.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`user_id` = 1) AND (users.retired = 0) [0m
+
+ActionController::UnknownAction (No action responded to img. Actions: admin?, check_authorized, and on_art):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  devise (1.0.11) lib/devise/rails/warden_compat.rb:43:in `call'
+  passenger (4.0.41) lib/phusion_passenger/rack/thread_handler_extension.rb:74:in `process_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:141:in `accept_and_process_next_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:109:in `main_loop'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:448:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `initialize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `new'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `times'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `synchronize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:205:in `main_loop'
+  passenger (4.0.41) helper-scripts/classic-rails-preloader.rb:187
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-09 00:43:50) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/DatePicker/img/boxTopRightCorner.png" with {:method=>:get}):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  devise (1.0.11) lib/devise/rails/warden_compat.rb:43:in `call'
+  passenger (4.0.41) lib/phusion_passenger/rack/thread_handler_extension.rb:74:in `process_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:141:in `accept_and_process_next_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:109:in `main_loop'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:448:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `initialize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `new'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `times'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `synchronize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:205:in `main_loop'
+  passenger (4.0.41) helper-scripts/classic-rails-preloader.rb:187
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-09 00:43:50) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/DatePicker/img/boxBottomRightCorner.png" with {:method=>:get}):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  devise (1.0.11) lib/devise/rails/warden_compat.rb:43:in `call'
+  passenger (4.0.41) lib/phusion_passenger/rack/thread_handler_extension.rb:74:in `process_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:141:in `accept_and_process_next_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:109:in `main_loop'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:448:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `initialize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `new'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `times'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `synchronize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:205:in `main_loop'
+  passenger (4.0.41) helper-scripts/classic-rails-preloader.rb:187
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-09 00:43:50) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/DatePicker/img/closeButton_normal.gif" with {:method=>:get}):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  devise (1.0.11) lib/devise/rails/warden_compat.rb:43:in `call'
+  passenger (4.0.41) lib/phusion_passenger/rack/thread_handler_extension.rb:74:in `process_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:141:in `accept_and_process_next_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:109:in `main_loop'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:448:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `initialize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `new'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `times'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `synchronize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:205:in `main_loop'
+  passenger (4.0.41) helper-scripts/classic-rails-preloader.rb:187
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-09 00:43:50) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/DatePicker/img/boxTopPx.gif" with {:method=>:get}):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  devise (1.0.11) lib/devise/rails/warden_compat.rb:43:in `call'
+  passenger (4.0.41) lib/phusion_passenger/rack/thread_handler_extension.rb:74:in `process_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:141:in `accept_and_process_next_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:109:in `main_loop'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:448:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `initialize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `new'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `times'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `synchronize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:205:in `main_loop'
+  passenger (4.0.41) helper-scripts/classic-rails-preloader.rb:187
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-09 00:43:51) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/DatePicker/img/monthBackward_over.gif" with {:method=>:get}):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  devise (1.0.11) lib/devise/rails/warden_compat.rb:43:in `call'
+  passenger (4.0.41) lib/phusion_passenger/rack/thread_handler_extension.rb:74:in `process_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:141:in `accept_and_process_next_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:109:in `main_loop'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:448:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `initialize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `new'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `times'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `synchronize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:205:in `main_loop'
+  passenger (4.0.41) helper-scripts/classic-rails-preloader.rb:187
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-09 00:43:51) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/DatePicker/img/yearBackward_over.gif" with {:method=>:get}):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  devise (1.0.11) lib/devise/rails/warden_compat.rb:43:in `call'
+  passenger (4.0.41) lib/phusion_passenger/rack/thread_handler_extension.rb:74:in `process_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:141:in `accept_and_process_next_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:109:in `main_loop'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:448:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `initialize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `new'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `times'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `synchronize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:205:in `main_loop'
+  passenger (4.0.41) helper-scripts/classic-rails-preloader.rb:187
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-09 00:43:52) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/DatePicker/img/yearBackward_down.gif" with {:method=>:get}):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  devise (1.0.11) lib/devise/rails/warden_compat.rb:43:in `call'
+  passenger (4.0.41) lib/phusion_passenger/rack/thread_handler_extension.rb:74:in `process_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:141:in `accept_and_process_next_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:109:in `main_loop'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:448:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `initialize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `new'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `times'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `synchronize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:205:in `main_loop'
+  passenger (4.0.41) helper-scripts/classic-rails-preloader.rb:187
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReportsController#img to gif (for 127.0.0.1 at 2014-06-09 00:43:52) [GET]
+  Parameters: {"id"=>"beige_dayNormal"}
+  [4;36;1mUser Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`user_id` = 1) AND (users.retired = 0) [0m
+
+ActionController::UnknownAction (No action responded to img. Actions: admin?, check_authorized, and on_art):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  devise (1.0.11) lib/devise/rails/warden_compat.rb:43:in `call'
+  passenger (4.0.41) lib/phusion_passenger/rack/thread_handler_extension.rb:74:in `process_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:141:in `accept_and_process_next_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:109:in `main_loop'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:448:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `initialize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `new'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `times'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `synchronize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:205:in `main_loop'
+  passenger (4.0.41) helper-scripts/classic-rails-preloader.rb:187
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReportsController#img to gif (for 127.0.0.1 at 2014-06-09 00:43:53) [GET]
+  Parameters: {"id"=>"beige_dayNormal"}
+  [4;35;1mUser Columns (3.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`user_id` = 1) AND (users.retired = 0) [0m
+
+ActionController::UnknownAction (No action responded to img. Actions: admin?, check_authorized, and on_art):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  devise (1.0.11) lib/devise/rails/warden_compat.rb:43:in `call'
+  passenger (4.0.41) lib/phusion_passenger/rack/thread_handler_extension.rb:74:in `process_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:141:in `accept_and_process_next_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:109:in `main_loop'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:448:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `initialize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `new'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `times'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `synchronize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:205:in `main_loop'
+  passenger (4.0.41) helper-scripts/classic-rails-preloader.rb:187
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-09 00:43:57) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/DatePicker/img/monthForward_over.gif" with {:method=>:get}):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  devise (1.0.11) lib/devise/rails/warden_compat.rb:43:in `call'
+  passenger (4.0.41) lib/phusion_passenger/rack/thread_handler_extension.rb:74:in `process_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:141:in `accept_and_process_next_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:109:in `main_loop'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:448:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `initialize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `new'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `times'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `synchronize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:205:in `main_loop'
+  passenger (4.0.41) helper-scripts/classic-rails-preloader.rb:187
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-09 00:43:58) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/DatePicker/img/monthForward_down.gif" with {:method=>:get}):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  devise (1.0.11) lib/devise/rails/warden_compat.rb:43:in `call'
+  passenger (4.0.41) lib/phusion_passenger/rack/thread_handler_extension.rb:74:in `process_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:141:in `accept_and_process_next_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:109:in `main_loop'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:448:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `initialize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `new'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `times'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `synchronize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:205:in `main_loop'
+  passenger (4.0.41) helper-scripts/classic-rails-preloader.rb:187
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReportsController#img to gif (for 127.0.0.1 at 2014-06-09 00:43:58) [GET]
+  Parameters: {"id"=>"beige_dayNormal"}
+  [4;36;1mUser Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`user_id` = 1) AND (users.retired = 0) [0m
+
+ActionController::UnknownAction (No action responded to img. Actions: admin?, check_authorized, and on_art):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  devise (1.0.11) lib/devise/rails/warden_compat.rb:43:in `call'
+  passenger (4.0.41) lib/phusion_passenger/rack/thread_handler_extension.rb:74:in `process_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:141:in `accept_and_process_next_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:109:in `main_loop'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:448:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `initialize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `new'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `times'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `synchronize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:205:in `main_loop'
+  passenger (4.0.41) helper-scripts/classic-rails-preloader.rb:187
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReportsController#img to gif (for 127.0.0.1 at 2014-06-09 00:43:59) [GET]
+  Parameters: {"id"=>"beige_dayOver"}
+  [4;35;1mUser Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`user_id` = 1) AND (users.retired = 0) [0m
+
+ActionController::UnknownAction (No action responded to img. Actions: admin?, check_authorized, and on_art):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  devise (1.0.11) lib/devise/rails/warden_compat.rb:43:in `call'
+  passenger (4.0.41) lib/phusion_passenger/rack/thread_handler_extension.rb:74:in `process_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:141:in `accept_and_process_next_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:109:in `main_loop'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:448:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `initialize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `new'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `times'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `synchronize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:205:in `main_loop'
+  passenger (4.0.41) helper-scripts/classic-rails-preloader.rb:187
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReportsController#img to gif (for 127.0.0.1 at 2014-06-09 00:43:59) [GET]
+  Parameters: {"id"=>"beige_dayNormal"}
+  [4;36;1mUser Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`user_id` = 1) AND (users.retired = 0) [0m
+
+ActionController::UnknownAction (No action responded to img. Actions: admin?, check_authorized, and on_art):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  devise (1.0.11) lib/devise/rails/warden_compat.rb:43:in `call'
+  passenger (4.0.41) lib/phusion_passenger/rack/thread_handler_extension.rb:74:in `process_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:141:in `accept_and_process_next_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:109:in `main_loop'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:448:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `initialize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `new'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `times'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `synchronize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:205:in `main_loop'
+  passenger (4.0.41) helper-scripts/classic-rails-preloader.rb:187
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReportsController#img to gif (for 127.0.0.1 at 2014-06-09 00:43:59) [GET]
+  Parameters: {"id"=>"beige_dayOver"}
+  [4;35;1mUser Columns (3.2ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`user_id` = 1) AND (users.retired = 0) [0m
+
+ActionController::UnknownAction (No action responded to img. Actions: admin?, check_authorized, and on_art):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  devise (1.0.11) lib/devise/rails/warden_compat.rb:43:in `call'
+  passenger (4.0.41) lib/phusion_passenger/rack/thread_handler_extension.rb:74:in `process_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:141:in `accept_and_process_next_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:109:in `main_loop'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:448:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `initialize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `new'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `times'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `synchronize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:205:in `main_loop'
+  passenger (4.0.41) helper-scripts/classic-rails-preloader.rb:187
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReportsController#img to gif (for 127.0.0.1 at 2014-06-09 00:43:59) [GET]
+  Parameters: {"id"=>"beige_dayNormal"}
+  [4;35;1mUser Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`user_id` = 1) AND (users.retired = 0) [0m
+
+ActionController::UnknownAction (No action responded to img. Actions: admin?, check_authorized, and on_art):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  devise (1.0.11) lib/devise/rails/warden_compat.rb:43:in `call'
+  passenger (4.0.41) lib/phusion_passenger/rack/thread_handler_extension.rb:74:in `process_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:141:in `accept_and_process_next_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:109:in `main_loop'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:448:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `initialize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `new'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `times'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `synchronize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:205:in `main_loop'
+  passenger (4.0.41) helper-scripts/classic-rails-preloader.rb:187
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReportsController#img to gif (for 127.0.0.1 at 2014-06-09 00:44:00) [GET]
+  Parameters: {"id"=>"beige_dayDown"}
+  [4;36;1mUser Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`user_id` = 1) AND (users.retired = 0) [0m
+
+ActionController::UnknownAction (No action responded to img. Actions: admin?, check_authorized, and on_art):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  devise (1.0.11) lib/devise/rails/warden_compat.rb:43:in `call'
+  passenger (4.0.41) lib/phusion_passenger/rack/thread_handler_extension.rb:74:in `process_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:141:in `accept_and_process_next_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:109:in `main_loop'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:448:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `initialize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `new'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `times'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `synchronize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:205:in `main_loop'
+  passenger (4.0.41) helper-scripts/classic-rails-preloader.rb:187
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReportsController#img to gif (for 127.0.0.1 at 2014-06-09 00:44:01) [GET]
+  Parameters: {"id"=>"beige_dayDown"}
+
+
+Processing ReportsController#img to gif (for 127.0.0.1 at 2014-06-09 00:44:01) [GET]
+  Parameters: {"id"=>"beige_dayNormal"}
+  [4;36;1mUser Columns (2.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Columns (2.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`user_id` = 1) AND (users.retired = 0) [0m
+
+ActionController::UnknownAction (No action responded to img. Actions: admin?, check_authorized, and on_art):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  devise (1.0.11) lib/devise/rails/warden_compat.rb:43:in `call'
+  passenger (4.0.41) lib/phusion_passenger/rack/thread_handler_extension.rb:74:in `process_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:141:in `accept_and_process_next_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:109:in `main_loop'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:448:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `initialize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `new'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `times'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `synchronize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:205:in `main_loop'
+  passenger (4.0.41) helper-scripts/classic-rails-preloader.rb:187
+
+Rendering rescues/layout (not_found)
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`user_id` = 1) AND (users.retired = 0) [0m
+
+ActionController::UnknownAction (No action responded to img. Actions: admin?, check_authorized, and on_art):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  devise (1.0.11) lib/devise/rails/warden_compat.rb:43:in `call'
+  passenger (4.0.41) lib/phusion_passenger/rack/thread_handler_extension.rb:74:in `process_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:141:in `accept_and_process_next_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:109:in `main_loop'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:448:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `initialize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `new'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `times'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `synchronize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:205:in `main_loop'
+  passenger (4.0.41) helper-scripts/classic-rails-preloader.rb:187
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReportsController#img to gif (for 127.0.0.1 at 2014-06-09 00:44:03) [GET]
+  Parameters: {"id"=>"beige_dayNormal"}
+  [4;35;1mUser Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`user_id` = 1) AND (users.retired = 0) [0m
+
+ActionController::UnknownAction (No action responded to img. Actions: admin?, check_authorized, and on_art):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  devise (1.0.11) lib/devise/rails/warden_compat.rb:43:in `call'
+  passenger (4.0.41) lib/phusion_passenger/rack/thread_handler_extension.rb:74:in `process_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:141:in `accept_and_process_next_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:109:in `main_loop'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:448:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `initialize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `new'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `times'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `synchronize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:205:in `main_loop'
+  passenger (4.0.41) helper-scripts/classic-rails-preloader.rb:187
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReportsController#img to gif (for 127.0.0.1 at 2014-06-09 00:44:04) [GET]
+  Parameters: {"id"=>"beige_dayNormal"}
+  [4;36;1mUser Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`user_id` = 1) AND (users.retired = 0) [0m
+
+ActionController::UnknownAction (No action responded to img. Actions: admin?, check_authorized, and on_art):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  devise (1.0.11) lib/devise/rails/warden_compat.rb:43:in `call'
+  passenger (4.0.41) lib/phusion_passenger/rack/thread_handler_extension.rb:74:in `process_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:141:in `accept_and_process_next_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:109:in `main_loop'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:448:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `initialize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `new'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `times'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `synchronize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:205:in `main_loop'
+  passenger (4.0.41) helper-scripts/classic-rails-preloader.rb:187
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReportsController#img to gif (for 127.0.0.1 at 2014-06-09 00:44:08) [GET]
+  Parameters: {"id"=>"beige_dayNormal"}
+  [4;35;1mUser Columns (2.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`user_id` = 1) AND (users.retired = 0) [0m
+
+ActionController::UnknownAction (No action responded to img. Actions: admin?, check_authorized, and on_art):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  devise (1.0.11) lib/devise/rails/warden_compat.rb:43:in `call'
+  passenger (4.0.41) lib/phusion_passenger/rack/thread_handler_extension.rb:74:in `process_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:141:in `accept_and_process_next_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:109:in `main_loop'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:448:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `initialize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `new'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `times'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `synchronize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:205:in `main_loop'
+  passenger (4.0.41) helper-scripts/classic-rails-preloader.rb:187
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReportsController#img to gif (for 127.0.0.1 at 2014-06-09 00:44:14) [GET]
+  Parameters: {"id"=>"beige_dayOver"}
+  [4;36;1mUser Columns (4.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`user_id` = 1) AND (users.retired = 0) [0m
+
+ActionController::UnknownAction (No action responded to img. Actions: admin?, check_authorized, and on_art):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  devise (1.0.11) lib/devise/rails/warden_compat.rb:43:in `call'
+  passenger (4.0.41) lib/phusion_passenger/rack/thread_handler_extension.rb:74:in `process_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:141:in `accept_and_process_next_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:109:in `main_loop'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:448:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `initialize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `new'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `times'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `synchronize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:205:in `main_loop'
+  passenger (4.0.41) helper-scripts/classic-rails-preloader.rb:187
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReportsController#img to gif (for 127.0.0.1 at 2014-06-09 00:44:14) [GET]
+  Parameters: {"id"=>"beige_dayNormal"}
+  [4;36;1mUser Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`user_id` = 1) AND (users.retired = 0) [0m
+
+ActionController::UnknownAction (No action responded to img. Actions: admin?, check_authorized, and on_art):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  devise (1.0.11) lib/devise/rails/warden_compat.rb:43:in `call'
+  passenger (4.0.41) lib/phusion_passenger/rack/thread_handler_extension.rb:74:in `process_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:141:in `accept_and_process_next_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:109:in `main_loop'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:448:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `initialize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `new'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `times'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `synchronize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:205:in `main_loop'
+  passenger (4.0.41) helper-scripts/classic-rails-preloader.rb:187
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReportsController#img to gif (for 127.0.0.1 at 2014-06-09 00:44:14) [GET]
+  Parameters: {"id"=>"beige_dayOver"}
+  [4;35;1mUser Columns (2.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`user_id` = 1) AND (users.retired = 0) [0m
+
+
+Processing ReportsController#img to gif (for 127.0.0.1 at 2014-06-09 00:44:14) [GET]
+  Parameters: {"id"=>"beige_dayNormal"}
+
+ActionController::UnknownAction (No action responded to img. Actions: admin?, check_authorized, and on_art):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  devise (1.0.11) lib/devise/rails/warden_compat.rb:43:in `call'
+  passenger (4.0.41) lib/phusion_passenger/rack/thread_handler_extension.rb:74:in `process_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:141:in `accept_and_process_next_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:109:in `main_loop'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:448:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `initialize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `new'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `times'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `synchronize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:205:in `main_loop'
+  passenger (4.0.41) helper-scripts/classic-rails-preloader.rb:187
+
+  [4;35;1mUser Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering rescues/layout (not_found)
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`user_id` = 1) AND (users.retired = 0) [0m
+
+ActionController::UnknownAction (No action responded to img. Actions: admin?, check_authorized, and on_art):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  devise (1.0.11) lib/devise/rails/warden_compat.rb:43:in `call'
+  passenger (4.0.41) lib/phusion_passenger/rack/thread_handler_extension.rb:74:in `process_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:141:in `accept_and_process_next_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:109:in `main_loop'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:448:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `initialize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `new'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `times'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `synchronize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:205:in `main_loop'
+  passenger (4.0.41) helper-scripts/classic-rails-preloader.rb:187
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReportsController#img to gif (for 127.0.0.1 at 2014-06-09 00:44:14) [GET]
+  Parameters: {"id"=>"beige_dayNormal"}
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+
+
+Processing ReportsController#img to gif (for 127.0.0.1 at 2014-06-09 00:44:14) [GET]
+  Parameters: {"id"=>"beige_dayOver"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`user_id` = 1) AND (users.retired = 0) [0m
+  [4;36;1mUser Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+
+ActionController::UnknownAction (No action responded to img. Actions: admin?, check_authorized, and on_art):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  devise (1.0.11) lib/devise/rails/warden_compat.rb:43:in `call'
+  passenger (4.0.41) lib/phusion_passenger/rack/thread_handler_extension.rb:74:in `process_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:141:in `accept_and_process_next_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:109:in `main_loop'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:448:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `initialize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `new'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `times'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `synchronize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:205:in `main_loop'
+  passenger (4.0.41) helper-scripts/classic-rails-preloader.rb:187
+
+Rendering rescues/layout (not_found)
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`user_id` = 1) AND (users.retired = 0) [0m
+
+ActionController::UnknownAction (No action responded to img. Actions: admin?, check_authorized, and on_art):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  devise (1.0.11) lib/devise/rails/warden_compat.rb:43:in `call'
+  passenger (4.0.41) lib/phusion_passenger/rack/thread_handler_extension.rb:74:in `process_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:141:in `accept_and_process_next_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:109:in `main_loop'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:448:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `initialize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `new'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `times'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `synchronize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:205:in `main_loop'
+  passenger (4.0.41) helper-scripts/classic-rails-preloader.rb:187
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReportsController#img to gif (for 127.0.0.1 at 2014-06-09 00:44:14) [GET]
+  Parameters: {"id"=>"beige_dayNormal"}
+  [4;35;1mUser Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`user_id` = 1) AND (users.retired = 0) [0m
+
+ActionController::UnknownAction (No action responded to img. Actions: admin?, check_authorized, and on_art):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  devise (1.0.11) lib/devise/rails/warden_compat.rb:43:in `call'
+  passenger (4.0.41) lib/phusion_passenger/rack/thread_handler_extension.rb:74:in `process_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:141:in `accept_and_process_next_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:109:in `main_loop'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:448:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `initialize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `new'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `times'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `synchronize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:205:in `main_loop'
+  passenger (4.0.41) helper-scripts/classic-rails-preloader.rb:187
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReportsController#img to gif (for 127.0.0.1 at 2014-06-09 00:44:15) [GET]
+  Parameters: {"id"=>"beige_dayOver"}
+  [4;36;1mUser Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`user_id` = 1) AND (users.retired = 0) [0m
+
+ActionController::UnknownAction (No action responded to img. Actions: admin?, check_authorized, and on_art):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  devise (1.0.11) lib/devise/rails/warden_compat.rb:43:in `call'
+  passenger (4.0.41) lib/phusion_passenger/rack/thread_handler_extension.rb:74:in `process_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:141:in `accept_and_process_next_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:109:in `main_loop'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:448:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `initialize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `new'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `times'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `synchronize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:205:in `main_loop'
+  passenger (4.0.41) helper-scripts/classic-rails-preloader.rb:187
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReportsController#img to gif (for 127.0.0.1 at 2014-06-09 00:44:15) [GET]
+  Parameters: {"id"=>"beige_dayDown"}
+  [4;35;1mUser Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`user_id` = 1) AND (users.retired = 0) [0m
+
+ActionController::UnknownAction (No action responded to img. Actions: admin?, check_authorized, and on_art):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+  devise (1.0.11) lib/devise/rails/warden_compat.rb:43:in `call'
+  passenger (4.0.41) lib/phusion_passenger/rack/thread_handler_extension.rb:74:in `process_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:141:in `accept_and_process_next_request'
+  passenger (4.0.41) lib/phusion_passenger/request_handler/thread_handler.rb:109:in `main_loop'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:448:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `initialize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `new'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:442:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `times'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:441:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `synchronize'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:440:in `start_threads'
+  passenger (4.0.41) lib/phusion_passenger/request_handler.rb:205:in `main_loop'
+  passenger (4.0.41) helper-scripts/classic-rails-preloader.rb:187
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReportsController#on_art (for 127.0.0.1 at 2014-06-09 00:44:25) [GET]
+  Parameters: {"end_date"=>"31-07-2012", "age"=>"1 to 14", "start_date"=>"01-07-2012"}
+  [4;36;1mUser Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`user_id` = 1) AND (users.retired = 0) [0m
+  [4;36;1mEncounter Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `encounter`[0m
+  [4;35;1mObservation Columns (3.1ms)[0m   [0mSHOW FIELDS FROM `obs`[0m
+  [4;36;1mOrder Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `orders`[0m
+  [4;35;1mEncounter Load (2964.6ms)[0m   [0mSELECT * FROM earliest_start_date e
+ INNER JOIN person p ON p.person_id = e.patient_id AND p.voided = 0 
+ WHERE e.earliest_start_date BETWEEN '2012-07-01' AND '2012-07-31'
+ AND (LEFT(e.date_enrolled,10) = e.earliest_start_date) 
+ AND age_at_initiation BETWEEN 1 AND 14 
+ GROUP BY e.patient_id;[0m
+  [4;36;1mEncounter Load (2960.2ms)[0m   [0;1mSELECT p.person_id,i.identifier arv_number,
+ e.age_at_initiation, current_state_for_program(e.patient_id, 1, '2012-08-31') outcome,
+ p.gender gender, p.birthdate, e.earliest_start_date
+ FROM earliest_start_date e
+ INNER JOIN person p ON p.person_id = e.patient_id 
+ RIGHT JOIN patient_identifier i ON i.patient_id = e.patient_id 
+ AND i.voided = 0 AND i.identifier_type = 4
+ WHERE e.patient_id IN(59867,60792,57344,60980,59968,58721,58793,61027) GROUP BY e.patient_id[0m
+  [4;35;1mEncounter Load (24.1ms)[0m   [0mSELECT current_defaulter(57344,'2012-08-31') as outcome;[0m
+  [4;36;1mEncounter Load (30.9ms)[0m   [0;1mSELECT current_defaulter(58721,'2012-08-31') as outcome;[0m
+  [4;35;1mEncounter Load (32.5ms)[0m   [0mSELECT current_defaulter(58793,'2012-08-31') as outcome;[0m
+  [4;36;1mEncounter Load (2.7ms)[0m   [0;1mSELECT current_defaulter(59867,'2012-08-31') as outcome;[0m
+  [4;35;1mEncounter Load (27.9ms)[0m   [0mSELECT current_defaulter(59968,'2012-08-31') as outcome;[0m
+  [4;36;1mEncounter Load (29.0ms)[0m   [0;1mSELECT current_defaulter(60792,'2012-08-31') as outcome;[0m
+  [4;35;1mEncounter Load (30.5ms)[0m   [0mSELECT current_defaulter(60980,'2012-08-31') as outcome;[0m
+  [4;36;1mEncounter Load (3.9ms)[0m   [0;1mSELECT current_defaulter(61027,'2012-08-31') as outcome;[0m
+  [4;35;1mEncounter Load (3022.3ms)[0m   [0mSELECT p.person_id,i.identifier arv_number,
+ e.age_at_initiation, current_state_for_program(e.patient_id, 1, '2012-09-30') outcome,
+ p.gender gender, p.birthdate, e.earliest_start_date
+ FROM earliest_start_date e
+ INNER JOIN person p ON p.person_id = e.patient_id 
+ RIGHT JOIN patient_identifier i ON i.patient_id = e.patient_id 
+ AND i.voided = 0 AND i.identifier_type = 4
+ WHERE e.patient_id IN(59867,60792,57344,60980,59968,58721,58793,61027) GROUP BY e.patient_id[0m
+  [4;36;1mEncounter Load (23.5ms)[0m   [0;1mSELECT current_defaulter(57344,'2012-09-30') as outcome;[0m
+  [4;35;1mEncounter Load (28.4ms)[0m   [0mSELECT current_defaulter(58721,'2012-09-30') as outcome;[0m
+  [4;36;1mEncounter Load (27.9ms)[0m   [0;1mSELECT current_defaulter(58793,'2012-09-30') as outcome;[0m
+  [4;35;1mEncounter Load (2.6ms)[0m   [0mSELECT current_defaulter(59867,'2012-09-30') as outcome;[0m
+  [4;36;1mEncounter Load (27.9ms)[0m   [0;1mSELECT current_defaulter(59968,'2012-09-30') as outcome;[0m
+  [4;35;1mEncounter Load (27.6ms)[0m   [0mSELECT current_defaulter(60792,'2012-09-30') as outcome;[0m
+  [4;36;1mEncounter Load (31.1ms)[0m   [0;1mSELECT current_defaulter(60980,'2012-09-30') as outcome;[0m
+  [4;35;1mEncounter Load (3.1ms)[0m   [0mSELECT current_defaulter(61027,'2012-09-30') as outcome;[0m
+  [4;36;1mEncounter Load (2945.3ms)[0m   [0;1mSELECT p.person_id,i.identifier arv_number,
+ e.age_at_initiation, current_state_for_program(e.patient_id, 1, '2012-10-31') outcome,
+ p.gender gender, p.birthdate, e.earliest_start_date
+ FROM earliest_start_date e
+ INNER JOIN person p ON p.person_id = e.patient_id 
+ RIGHT JOIN patient_identifier i ON i.patient_id = e.patient_id 
+ AND i.voided = 0 AND i.identifier_type = 4
+ WHERE e.patient_id IN(59867,60792,57344,60980,59968,58721,58793,61027) GROUP BY e.patient_id[0m
+  [4;35;1mEncounter Load (28.4ms)[0m   [0mSELECT current_defaulter(58721,'2012-10-31') as outcome;[0m
+  [4;36;1mEncounter Load (28.9ms)[0m   [0;1mSELECT current_defaulter(58793,'2012-10-31') as outcome;[0m
+  [4;35;1mEncounter Load (2.5ms)[0m   [0mSELECT current_defaulter(59867,'2012-10-31') as outcome;[0m
+  [4;36;1mEncounter Load (28.1ms)[0m   [0;1mSELECT current_defaulter(59968,'2012-10-31') as outcome;[0m
+  [4;35;1mEncounter Load (27.4ms)[0m   [0mSELECT current_defaulter(60792,'2012-10-31') as outcome;[0m
+  [4;36;1mEncounter Load (2.7ms)[0m   [0;1mSELECT current_defaulter(61027,'2012-10-31') as outcome;[0m
+  [4;35;1mEncounter Load (2966.7ms)[0m   [0mSELECT p.person_id,i.identifier arv_number,
+ e.age_at_initiation, current_state_for_program(e.patient_id, 1, '2012-11-30') outcome,
+ p.gender gender, p.birthdate, e.earliest_start_date
+ FROM earliest_start_date e
+ INNER JOIN person p ON p.person_id = e.patient_id 
+ RIGHT JOIN patient_identifier i ON i.patient_id = e.patient_id 
+ AND i.voided = 0 AND i.identifier_type = 4
+ WHERE e.patient_id IN(59867,60792,57344,60980,59968,58721,58793,61027) GROUP BY e.patient_id[0m
+  [4;36;1mEncounter Load (22.2ms)[0m   [0;1mSELECT current_defaulter(57344,'2012-11-30') as outcome;[0m
+  [4;35;1mEncounter Load (34.3ms)[0m   [0mSELECT current_defaulter(58721,'2012-11-30') as outcome;[0m
+  [4;36;1mEncounter Load (32.7ms)[0m   [0;1mSELECT current_defaulter(58793,'2012-11-30') as outcome;[0m
+  [4;35;1mEncounter Load (3.2ms)[0m   [0mSELECT current_defaulter(59867,'2012-11-30') as outcome;[0m
+  [4;36;1mEncounter Load (31.0ms)[0m   [0;1mSELECT current_defaulter(59968,'2012-11-30') as outcome;[0m
+  [4;35;1mEncounter Load (25.9ms)[0m   [0mSELECT current_defaulter(60792,'2012-11-30') as outcome;[0m
+  [4;36;1mEncounter Load (2.9ms)[0m   [0;1mSELECT current_defaulter(61027,'2012-11-30') as outcome;[0m
+  [4;35;1mEncounter Load (2969.9ms)[0m   [0mSELECT p.person_id,i.identifier arv_number,
+ e.age_at_initiation, current_state_for_program(e.patient_id, 1, '2012-12-31') outcome,
+ p.gender gender, p.birthdate, e.earliest_start_date
+ FROM earliest_start_date e
+ INNER JOIN person p ON p.person_id = e.patient_id 
+ RIGHT JOIN patient_identifier i ON i.patient_id = e.patient_id 
+ AND i.voided = 0 AND i.identifier_type = 4
+ WHERE e.patient_id IN(59867,60792,57344,60980,59968,58721,58793,61027) GROUP BY e.patient_id[0m
+  [4;36;1mEncounter Load (22.1ms)[0m   [0;1mSELECT current_defaulter(57344,'2012-12-31') as outcome;[0m
+  [4;35;1mEncounter Load (27.7ms)[0m   [0mSELECT current_defaulter(58721,'2012-12-31') as outcome;[0m
+  [4;36;1mEncounter Load (32.0ms)[0m   [0;1mSELECT current_defaulter(58793,'2012-12-31') as outcome;[0m
+  [4;35;1mEncounter Load (33.2ms)[0m   [0mSELECT current_defaulter(59968,'2012-12-31') as outcome;[0m
+  [4;36;1mEncounter Load (27.9ms)[0m   [0;1mSELECT current_defaulter(60792,'2012-12-31') as outcome;[0m
+  [4;35;1mEncounter Load (2.8ms)[0m   [0mSELECT current_defaulter(61027,'2012-12-31') as outcome;[0m
+  [4;36;1mEncounter Load (2954.2ms)[0m   [0;1mSELECT p.person_id,i.identifier arv_number,
+ e.age_at_initiation, current_state_for_program(e.patient_id, 1, '2013-01-31') outcome,
+ p.gender gender, p.birthdate, e.earliest_start_date
+ FROM earliest_start_date e
+ INNER JOIN person p ON p.person_id = e.patient_id 
+ RIGHT JOIN patient_identifier i ON i.patient_id = e.patient_id 
+ AND i.voided = 0 AND i.identifier_type = 4
+ WHERE e.patient_id IN(59867,60792,57344,60980,59968,58721,58793,61027) GROUP BY e.patient_id[0m
+  [4;35;1mEncounter Load (23.9ms)[0m   [0mSELECT current_defaulter(57344,'2013-01-31') as outcome;[0m
+  [4;36;1mEncounter Load (34.0ms)[0m   [0;1mSELECT current_defaulter(58721,'2013-01-31') as outcome;[0m
+  [4;35;1mEncounter Load (30.3ms)[0m   [0mSELECT current_defaulter(58793,'2013-01-31') as outcome;[0m
+  [4;36;1mEncounter Load (32.7ms)[0m   [0;1mSELECT current_defaulter(59968,'2013-01-31') as outcome;[0m
+  [4;35;1mEncounter Load (31.2ms)[0m   [0mSELECT current_defaulter(60792,'2013-01-31') as outcome;[0m
+  [4;36;1mEncounter Load (3.5ms)[0m   [0;1mSELECT current_defaulter(61027,'2013-01-31') as outcome;[0m
+  [4;35;1mEncounter Load (2950.9ms)[0m   [0mSELECT p.person_id,i.identifier arv_number,
+ e.age_at_initiation, current_state_for_program(e.patient_id, 1, '2013-02-28') outcome,
+ p.gender gender, p.birthdate, e.earliest_start_date
+ FROM earliest_start_date e
+ INNER JOIN person p ON p.person_id = e.patient_id 
+ RIGHT JOIN patient_identifier i ON i.patient_id = e.patient_id 
+ AND i.voided = 0 AND i.identifier_type = 4
+ WHERE e.patient_id IN(59867,60792,57344,60980,59968,58721,58793,61027) GROUP BY e.patient_id[0m
+  [4;36;1mEncounter Load (24.9ms)[0m   [0;1mSELECT current_defaulter(57344,'2013-02-28') as outcome;[0m
+  [4;35;1mEncounter Load (30.5ms)[0m   [0mSELECT current_defaulter(58721,'2013-02-28') as outcome;[0m
+  [4;36;1mEncounter Load (33.1ms)[0m   [0;1mSELECT current_defaulter(58793,'2013-02-28') as outcome;[0m
+  [4;35;1mEncounter Load (32.3ms)[0m   [0mSELECT current_defaulter(59968,'2013-02-28') as outcome;[0m
+  [4;36;1mEncounter Load (28.2ms)[0m   [0;1mSELECT current_defaulter(60792,'2013-02-28') as outcome;[0m
+  [4;35;1mEncounter Load (4.0ms)[0m   [0mSELECT current_defaulter(61027,'2013-02-28') as outcome;[0m
+  [4;36;1mEncounter Load (2965.3ms)[0m   [0;1mSELECT p.person_id,i.identifier arv_number,
+ e.age_at_initiation, current_state_for_program(e.patient_id, 1, '2013-03-31') outcome,
+ p.gender gender, p.birthdate, e.earliest_start_date
+ FROM earliest_start_date e
+ INNER JOIN person p ON p.person_id = e.patient_id 
+ RIGHT JOIN patient_identifier i ON i.patient_id = e.patient_id 
+ AND i.voided = 0 AND i.identifier_type = 4
+ WHERE e.patient_id IN(59867,60792,57344,60980,59968,58721,58793,61027) GROUP BY e.patient_id[0m
+  [4;35;1mEncounter Load (24.7ms)[0m   [0mSELECT current_defaulter(57344,'2013-03-31') as outcome;[0m
+  [4;36;1mEncounter Load (31.6ms)[0m   [0;1mSELECT current_defaulter(58721,'2013-03-31') as outcome;[0m
+  [4;35;1mEncounter Load (36.2ms)[0m   [0mSELECT current_defaulter(58793,'2013-03-31') as outcome;[0m
+  [4;36;1mEncounter Load (32.5ms)[0m   [0;1mSELECT current_defaulter(59968,'2013-03-31') as outcome;[0m
+  [4;35;1mEncounter Load (27.1ms)[0m   [0mSELECT current_defaulter(60792,'2013-03-31') as outcome;[0m
+  [4;36;1mEncounter Load (4.9ms)[0m   [0;1mSELECT current_defaulter(61027,'2013-03-31') as outcome;[0m
+  [4;35;1mEncounter Load (2954.3ms)[0m   [0mSELECT p.person_id,i.identifier arv_number,
+ e.age_at_initiation, current_state_for_program(e.patient_id, 1, '2013-04-30') outcome,
+ p.gender gender, p.birthdate, e.earliest_start_date
+ FROM earliest_start_date e
+ INNER JOIN person p ON p.person_id = e.patient_id 
+ RIGHT JOIN patient_identifier i ON i.patient_id = e.patient_id 
+ AND i.voided = 0 AND i.identifier_type = 4
+ WHERE e.patient_id IN(59867,60792,57344,60980,59968,58721,58793,61027) GROUP BY e.patient_id[0m
+  [4;36;1mEncounter Load (23.0ms)[0m   [0;1mSELECT current_defaulter(57344,'2013-04-30') as outcome;[0m
+  [4;35;1mEncounter Load (32.7ms)[0m   [0mSELECT current_defaulter(58721,'2013-04-30') as outcome;[0m
+  [4;36;1mEncounter Load (32.9ms)[0m   [0;1mSELECT current_defaulter(58793,'2013-04-30') as outcome;[0m
+  [4;35;1mEncounter Load (30.6ms)[0m   [0mSELECT current_defaulter(59968,'2013-04-30') as outcome;[0m
+  [4;36;1mEncounter Load (30.7ms)[0m   [0;1mSELECT current_defaulter(60792,'2013-04-30') as outcome;[0m
+  [4;35;1mEncounter Load (3.0ms)[0m   [0mSELECT current_defaulter(61027,'2013-04-30') as outcome;[0m
+  [4;36;1mEncounter Load (2992.8ms)[0m   [0;1mSELECT p.person_id,i.identifier arv_number,
+ e.age_at_initiation, current_state_for_program(e.patient_id, 1, '2013-05-31') outcome,
+ p.gender gender, p.birthdate, e.earliest_start_date
+ FROM earliest_start_date e
+ INNER JOIN person p ON p.person_id = e.patient_id 
+ RIGHT JOIN patient_identifier i ON i.patient_id = e.patient_id 
+ AND i.voided = 0 AND i.identifier_type = 4
+ WHERE e.patient_id IN(59867,60792,57344,60980,59968,58721,58793,61027) GROUP BY e.patient_id[0m
+  [4;35;1mEncounter Load (23.2ms)[0m   [0mSELECT current_defaulter(57344,'2013-05-31') as outcome;[0m
+  [4;36;1mEncounter Load (31.2ms)[0m   [0;1mSELECT current_defaulter(58721,'2013-05-31') as outcome;[0m
+  [4;35;1mEncounter Load (36.7ms)[0m   [0mSELECT current_defaulter(58793,'2013-05-31') as outcome;[0m
+  [4;36;1mEncounter Load (32.9ms)[0m   [0;1mSELECT current_defaulter(59968,'2013-05-31') as outcome;[0m
+  [4;35;1mEncounter Load (25.9ms)[0m   [0mSELECT current_defaulter(60792,'2013-05-31') as outcome;[0m
+  [4;36;1mEncounter Load (3.0ms)[0m   [0;1mSELECT current_defaulter(61027,'2013-05-31') as outcome;[0m
+  [4;35;1mEncounter Load (2958.6ms)[0m   [0mSELECT p.person_id,i.identifier arv_number,
+ e.age_at_initiation, current_state_for_program(e.patient_id, 1, '2013-06-30') outcome,
+ p.gender gender, p.birthdate, e.earliest_start_date
+ FROM earliest_start_date e
+ INNER JOIN person p ON p.person_id = e.patient_id 
+ RIGHT JOIN patient_identifier i ON i.patient_id = e.patient_id 
+ AND i.voided = 0 AND i.identifier_type = 4
+ WHERE e.patient_id IN(59867,60792,57344,60980,59968,58721,58793,61027) GROUP BY e.patient_id[0m
+  [4;36;1mEncounter Load (22.2ms)[0m   [0;1mSELECT current_defaulter(57344,'2013-06-30') as outcome;[0m
+  [4;35;1mEncounter Load (31.0ms)[0m   [0mSELECT current_defaulter(58721,'2013-06-30') as outcome;[0m
+  [4;36;1mEncounter Load (32.4ms)[0m   [0;1mSELECT current_defaulter(58793,'2013-06-30') as outcome;[0m
+  [4;35;1mEncounter Load (33.5ms)[0m   [0mSELECT current_defaulter(59968,'2013-06-30') as outcome;[0m
+  [4;36;1mEncounter Load (31.7ms)[0m   [0;1mSELECT current_defaulter(60792,'2013-06-30') as outcome;[0m
+  [4;35;1mEncounter Load (31.3ms)[0m   [0mSELECT current_defaulter(60980,'2013-06-30') as outcome;[0m
+  [4;36;1mEncounter Load (2.8ms)[0m   [0;1mSELECT current_defaulter(61027,'2013-06-30') as outcome;[0m
+  [4;35;1mEncounter Load (2957.3ms)[0m   [0mSELECT p.person_id,i.identifier arv_number,
+ e.age_at_initiation, current_state_for_program(e.patient_id, 1, '2013-07-31') outcome,
+ p.gender gender, p.birthdate, e.earliest_start_date
+ FROM earliest_start_date e
+ INNER JOIN person p ON p.person_id = e.patient_id 
+ RIGHT JOIN patient_identifier i ON i.patient_id = e.patient_id 
+ AND i.voided = 0 AND i.identifier_type = 4
+ WHERE e.patient_id IN(59867,60792,57344,60980,59968,58721,58793,61027) GROUP BY e.patient_id[0m
+  [4;36;1mEncounter Load (22.6ms)[0m   [0;1mSELECT current_defaulter(57344,'2013-07-31') as outcome;[0m
+  [4;35;1mEncounter Load (31.1ms)[0m   [0mSELECT current_defaulter(58721,'2013-07-31') as outcome;[0m
+  [4;36;1mEncounter Load (32.5ms)[0m   [0;1mSELECT current_defaulter(58793,'2013-07-31') as outcome;[0m
+  [4;35;1mEncounter Load (32.0ms)[0m   [0mSELECT current_defaulter(59968,'2013-07-31') as outcome;[0m
+  [4;36;1mEncounter Load (28.0ms)[0m   [0;1mSELECT current_defaulter(60792,'2013-07-31') as outcome;[0m
+  [4;35;1mEncounter Load (31.8ms)[0m   [0mSELECT current_defaulter(60980,'2013-07-31') as outcome;[0m
+  [4;36;1mEncounter Load (2.8ms)[0m   [0;1mSELECT current_defaulter(61027,'2013-07-31') as outcome;[0m
+Rendering template within layouts/application
+Rendering reports/on_art
+Rendered reports/_art (6.7ms)
+  [4;35;1mLocation Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `location`[0m
+  [4;36;1mGlobalProperty Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `global_property`[0m
+  [4;35;1mGlobalProperty Load (0.5ms)[0m   [0mSELECT * FROM `global_property` WHERE (`global_property`.`property` = 'current_health_center_id') LIMIT 1[0m
+  [4;36;1mLocation Load (0.3ms)[0m   [0;1mSELECT * FROM `location` WHERE (`location`.`location_id` = 10) AND (location.retired = 0) [0m
+Completed in 40875ms (View: 93, DB: 40486) | 200 OK [http://localhost/reports/on_art?start_date=01-07-2012&end_date=31-07-2012&age=1%20to%2014]

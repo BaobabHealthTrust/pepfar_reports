@@ -472,4 +472,32 @@ ORDER BY clinic ASC"])
     return total_registered
   end
 
+  def self.total_new_registered(start_date, end_date, age)
+    total_registered = {}
+
+    result = Encounter.find_by_sql("SELECT * FROM earliest_start_date e
+      INNER JOIN person p ON p.person_id = e.patient_id AND p.voided = 0 
+      WHERE e.earliest_start_date BETWEEN '#{start_date}' AND '#{end_date}'
+      AND (LEFT(e.date_enrolled,10) = e.earliest_start_date) 
+      AND age_at_initiation BETWEEN #{age.first} AND #{age.last} 
+      GROUP BY e.patient_id;")
+
+    unless result.blank?
+      result.each do |r|
+        gender =  r.gender.upcase rescue nil
+        next if gender.blank?
+        if total_registered[r.patient_id].blank? 
+          total_registered[r.patient_id] = []
+
+          total_registered[r.patient_id] = {
+            :earliest_start_date =>  r.earliest_start_date,
+            :age_at_initiation => r.age_at_initiation,
+            :gender => gender
+          }
+        end
+      end
+    end
+    return total_registered
+  end
+
 end

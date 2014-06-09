@@ -23,7 +23,7 @@ class ReportsController < ApplicationController
       unless @total_registered.blank?
         patients_to_follow = @total_registered.keys
         (1.upto(12)).each do |m|
-          #next unless m == 12
+          next unless m == 12
           followup_start_date = @start_date + m.month
           @followup_months[followup_start_date] = Report.followup_months(patients_to_follow,followup_start_date)
         end

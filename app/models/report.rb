@@ -383,16 +383,16 @@ ORDER BY clinic ASC"])
   def self.total_registered_pregnant(start_date, end_date, age)
     total_registered = {}
 
-    result = Encounter.find_by_sql("SELECT * FROM earliest_start_date e
-      INNER JOIN person p ON p.person_id = e.patient_id AND p.voided = 0 AND p.gender = 'F'
-      LEFT JOIN obs ON obs.person_id = p.person_id = obs.person_id 
-      AND obs.voided = 0 AND obs.concept_id = 7563 AND obs.value_coded = 1755
-      LEFT JOIN patient_pregnant_obs preg ON preg.person_id = e.patient_id
-      AND preg.concept_id = 1065 AND LEFT(preg.obs_datetime,10) = e.earliest_start_date
-      WHERE e.earliest_start_date BETWEEN '#{start_date}' AND '#{end_date}'
-      AND (LEFT(e.date_enrolled,10) = e.earliest_start_date) 
-      AND age_at_initiation BETWEEN #{age.first} AND #{age.last} 
-      GROUP BY e.patient_id;")
+    result = Encounter.find_by_sql("SELECT p.person_id patient_id,p.birthdate,p.gender,obs.obs_datetime,
+      e.earliest_start_date,e.age_at_initiation FROM obs 
+      INNER JOIN person p ON p.person_id = obs.person_id AND p.voided = 0 
+      AND obs.voided = 0 AND p.gender = 'F'
+      INNER JOIN earliest_start_date e ON e.patient_id = p.person_id
+      AND e.earliest_start_date BETWEEN '#{start_date}' AND '#{end_date}'
+      WHERE obs.concept_id = 7563 AND value_coded = 1755
+      AND (LEFT(e.date_enrolled,10) = e.earliest_start_date)
+      AND e.age_at_initiation BETWEEN #{age.first} AND #{age.last} 
+      GROUP BY e.patient_id")
 
     unless result.blank?
       result.each do |r|
@@ -409,6 +409,38 @@ ORDER BY clinic ASC"])
         end
       end
     end
+
+    patient_ids = total_registered.keys.join(',') rescue []
+
+    unless patient_ids.blank?
+      result = Encounter.find_by_sql("SELECT p.person_id patient_id,p.gender,
+        e.earliest_start_date,e.age_at_initiation FROM earliest_start_date e
+        INNER JOIN person p ON p.person_id = e.patient_id AND p.voided = 0 AND p.gender = 'F'
+        AND e.earliest_start_date BETWEEN '#{start_date}' AND '#{end_date}'
+        INNER JOIN patient_pregnant_obs preg ON preg.person_id = e.patient_id
+        WHERE preg.value_coded = 1065 AND preg.person_id NOT IN(#{patient_ids})
+        AND (LEFT(e.date_enrolled,10) = e.earliest_start_date)
+        AND e.age_at_initiation BETWEEN #{age.first} AND #{age.last} 
+        AND DATEDIFF(e.earliest_start_date,preg.obs_datetime) <= 30
+        GROUP BY e.patient_id")
+
+      unless result.blank?
+        result.each do |r|
+          gender =  r.gender.upcase rescue nil
+          next if gender.blank?
+          if total_registered[r.patient_id].blank? 
+            total_registered[r.patient_id] = []
+
+            total_registered[r.patient_id] = {
+              :earliest_start_date =>  r.earliest_start_date,
+              :age_at_initiation => r.age_at_initiation,
+              :gender => gender
+            }
+          end
+        end
+      end
+    end
+
     return total_registered
   end
 

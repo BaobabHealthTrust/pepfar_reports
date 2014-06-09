@@ -9,10 +9,10 @@ class ReportsController < ApplicationController
           @age_group = "All patients"
         when '0,0'
           age = [0,0]
-          @age_group = "Patients under one year old when starting"
-        when '1 to 14'
-          age = [1,14]
-          @age_group = "Patients between 1 yr and under 15 yrs old when starting"
+          @age_group = "Patients less tha a year old when starting"
+        when '0 to 14'
+          age = [0,14]
+          @age_group = "Patients less than 15 yrs old when starting"
         when '>= 15'
           age = [15,1000]
           @age_group = "Patients over 15 years old when starting"
@@ -42,10 +42,10 @@ class ReportsController < ApplicationController
           @age_group = "All patients"
         when '0,0'
           age = [0,0]
-          @age_group = "Patients under one year old when starting"
+          @age_group = "Patients less than a year old when starting"
         when '1 to 14'
-          age = [1,14]
-          @age_group = "Patients between 1 yr and under 15 yrs old when starting"
+          age = [0,14]
+          @age_group = "Patients less than 15 yrs old when starting"
         when '>= 15'
           age = [15,1000]
           @age_group = "Patients over 15 years old when starting"
@@ -55,8 +55,7 @@ class ReportsController < ApplicationController
       @followup_months = {}
       unless @total_registered.blank?
         patients_to_follow = @total_registered.keys
-        (1.upto(12)).each do |m|
-          next unless m == 12
+        (1.upto(3)).each do |m|
           followup_start_date = @start_date + m.month
           @followup_months[followup_start_date] = Report.followup_months(patients_to_follow,followup_start_date)
         end

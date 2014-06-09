@@ -135,7 +135,7 @@
     </tr>
     <tr>
       <%
-        ages = [['All','All'],['Less than one','0,0'],['Between 1 and 14','1 to 14'],['15 and above','>= 15']]
+        ages = [['All','All'],['Less than one','0,0'],['< 15','0 to 14'],['15 and above','>= 15']]
       %>
       <td><%= select_tag "age", options_for_select(ages),:placeholder => "All" %></td>
       <td>

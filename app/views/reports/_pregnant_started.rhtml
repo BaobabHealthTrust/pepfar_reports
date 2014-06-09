@@ -12,28 +12,19 @@
 
 <%if not @total_registered.blank?%>
 <div class="table-header">
-  Patients registered - on ART:&nbsp;<%=@start_date%>&nbsp;to&nbsp;<%=@end_date%><br />
+  Pregnant women - started on ART:&nbsp;<%=@start_date%>&nbsp;to&nbsp;<%=@end_date%><br />
   AGE GROUP:&nbsp;<%=@age_group%>
 </div>
 
 <table style="width: 100%;" class="data-content">
   <thead>
   <tr>
-    <th>Total registered: Male</th>
-    <th>Total registered: Female</th>
     <th>Total registered:</th>
   </tr>
   </thead>
 
   <tbody>
-  <%male = 0 ; female = 0
-  (@total_registered || {}).each do |patient_id, data|
-    male += 1 if data[:gender] == 'M' 
-    female += 1 if data[:gender] == 'F' 
-  end%>
   <tr>
-    <td><%=male%></td>
-    <td><%=female%></td>
     <td><%=@total_registered.length%></td>
   </tr>
   <tbody>

@@ -9,9 +9,9 @@ production:
 development:
   adapter: mysql
   username: root
-  database: openmrs_area25 #thyolo_new_data #openmrs_st_gabriels_bart2 #openmrs_nkhotakota
-  password: root.letusout!
-  host: localhost
+  database: openmrs_queens2 #thyolo_new_data #openmrs_st_gabriels_bart2 #openmrs_nkhotakota
+  password: root
+  host: 192.168.43.175
 
 test: &TEST
   adapter: mysql

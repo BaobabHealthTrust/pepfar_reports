@@ -57,7 +57,7 @@
   </tr>
     <%
     on_art = 0 ; defaulter = 0 ; died = 0
-    to = 0 ; ts = 0 ; unknown = 0
+    to = 0 ; ts = 0 ; unknown = 0 ; total = 0
     (data || {}).each do |patient_id, patient_attr|
       on_art += 1 if patient_attr[:outcome] == 'On ART'
       defaulter += 1 if patient_attr[:outcome] == 'Defaulter'

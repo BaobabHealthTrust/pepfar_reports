@@ -303,11 +303,18 @@ ORDER BY clinic ASC"])
 
   def self.total_registered(start_date, end_date, age)
     total_registered = {}
-
+=begin
     result = Encounter.find_by_sql("SELECT * FROM earliest_start_date e
       INNER JOIN person p ON p.person_id = e.patient_id AND p.voided = 0 
       WHERE e.earliest_start_date BETWEEN '#{start_date}' AND '#{end_date}'
       AND (LEFT(e.date_enrolled,10) = e.earliest_start_date) 
+      AND age_at_initiation BETWEEN #{age.first} AND #{age.last} 
+      GROUP BY e.patient_id;")
+=end
+
+    result = Encounter.find_by_sql("SELECT * FROM earliest_start_date e
+      INNER JOIN person p ON p.person_id = e.patient_id AND p.voided = 0 
+      WHERE e.earliest_start_date BETWEEN '#{start_date}' AND '#{end_date}'
       AND age_at_initiation BETWEEN #{age.first} AND #{age.last} 
       GROUP BY e.patient_id;")
 
@@ -382,7 +389,7 @@ ORDER BY clinic ASC"])
 
   def self.total_registered_pregnant(start_date, end_date, age)
     total_registered = {}
-
+=begin
     result = Encounter.find_by_sql("SELECT p.person_id patient_id,p.birthdate,p.gender,obs.obs_datetime,
       e.earliest_start_date,e.age_at_initiation FROM obs 
       INNER JOIN person p ON p.person_id = obs.person_id AND p.voided = 0 
@@ -391,6 +398,17 @@ ORDER BY clinic ASC"])
       AND e.earliest_start_date BETWEEN '#{start_date}' AND '#{end_date}'
       WHERE obs.concept_id = 7563 AND value_coded = 1755
       AND (LEFT(e.date_enrolled,10) = e.earliest_start_date)
+      AND e.age_at_initiation BETWEEN #{age.first} AND #{age.last} 
+      GROUP BY e.patient_id")
+=end
+
+    result = Encounter.find_by_sql("SELECT p.person_id patient_id,p.birthdate,p.gender,obs.obs_datetime,
+      e.earliest_start_date,e.age_at_initiation FROM obs 
+      INNER JOIN person p ON p.person_id = obs.person_id AND p.voided = 0 
+      AND obs.voided = 0 AND p.gender = 'F'
+      INNER JOIN earliest_start_date e ON e.patient_id = p.person_id
+      AND e.earliest_start_date BETWEEN '#{start_date}' AND '#{end_date}'
+      WHERE obs.concept_id = 7563 AND value_coded = 1755
       AND e.age_at_initiation BETWEEN #{age.first} AND #{age.last} 
       GROUP BY e.patient_id")
 
@@ -411,8 +429,8 @@ ORDER BY clinic ASC"])
     end
 
     patient_ids = total_registered.keys.join(',') rescue []
-
     unless patient_ids.blank?
+=begin
       result = Encounter.find_by_sql("SELECT p.person_id patient_id,p.gender,
         e.earliest_start_date,e.age_at_initiation FROM earliest_start_date e
         INNER JOIN person p ON p.person_id = e.patient_id AND p.voided = 0 AND p.gender = 'F'
@@ -420,6 +438,16 @@ ORDER BY clinic ASC"])
         INNER JOIN patient_pregnant_obs preg ON preg.person_id = e.patient_id
         WHERE preg.value_coded = 1065 AND preg.person_id NOT IN(#{patient_ids})
         AND (LEFT(e.date_enrolled,10) = e.earliest_start_date)
+        AND e.age_at_initiation BETWEEN #{age.first} AND #{age.last} 
+        AND DATEDIFF(e.earliest_start_date,preg.obs_datetime) <= 30
+        GROUP BY e.patient_id")
+=end
+      result = Encounter.find_by_sql("SELECT p.person_id patient_id,p.gender,
+        e.earliest_start_date,e.age_at_initiation FROM earliest_start_date e
+        INNER JOIN person p ON p.person_id = e.patient_id AND p.voided = 0 AND p.gender = 'F'
+        AND e.earliest_start_date BETWEEN '#{start_date}' AND '#{end_date}'
+        INNER JOIN patient_pregnant_obs preg ON preg.person_id = e.patient_id
+        WHERE preg.value_coded = 1065 AND preg.person_id NOT IN(#{patient_ids})
         AND e.age_at_initiation BETWEEN #{age.first} AND #{age.last} 
         AND DATEDIFF(e.earliest_start_date,preg.obs_datetime) <= 30
         GROUP BY e.patient_id")

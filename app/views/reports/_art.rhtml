@@ -58,7 +58,6 @@
     <%
     on_art = 0 ; defaulter = 0 ; died = 0
     to = 0 ; ts = 0 ; unknown = 0
-    test = Hash.new(0)
     (data || {}).each do |patient_id, patient_attr|
       on_art += 1 if patient_attr[:outcome] == 'On ART'
       defaulter += 1 if patient_attr[:outcome] == 'Defaulter'
@@ -66,7 +65,7 @@
       to += 1 if patient_attr[:outcome] == 'Transfered out'
       ts += 1 if patient_attr[:outcome] == 'Treatement stopped'
       unknown += 1 if patient_attr[:outcome] == 'Unknown'
-      test[patient_attr[:outcome]] += 1
+      total = (on_art + defaulter + died + to + ts + unknown)
     end%>
     <tr>
       <td>On ART</td>
@@ -91,6 +90,13 @@
     <tr>
       <td>Unknown</td>
       <td><%=unknown%></td>
+    </tr>
+    <tr>
+      <td colspan=2>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td><%=total%></td>
     </tr>
   <%end%>
   <tbody>

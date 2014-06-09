@@ -2,6 +2,7 @@
 *.swp
 *.swo
 *.pid
+*.lock
 config/database.yml
 notes
 development.sql

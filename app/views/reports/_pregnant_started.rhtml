@@ -9,6 +9,44 @@
   }
 </style>
 
+<script type="text/javascript">
+
+function reportDriller(passed_outcome) {
+  outcome_patient_ids = [];
+
+<%(@followup_months || {}).sort_by{|k,d| k.to_date}.each do |month, data|
+  (data || {}).each do |patient_id, patient_attr| %>
+   var outcome = "<%=patient_attr[:outcome]%>";
+   try {
+     if (passed_outcome == outcome) {
+       outcome_patient_ids.push(<%=patient_id%>); 
+     }
+   }catch(e) {
+     alert(e);
+   }
+<%end
+end%>
+
+  if(outcome_patient_ids.length > 0) {
+    submitForm = document.createElement("FORM");
+    submitForm.setAttribute("type","hidden");
+    document.body.appendChild(submitForm);
+    submitForm.method = "POST";
+
+    newElement = document.createElement("input")
+    newElement.setAttribute("name",'patient_ids')
+    newElement.setAttribute("type","hidden");
+    newElement.value = outcome_patient_ids.join(',');
+    submitForm.appendChild(newElement);
+
+    submitForm.action= "/reports/patients";
+    submitForm.submit();
+    return;
+  }
+}
+
+</script>
+
 
 <%if not @total_registered.blank?%>
 <div class="table-header">
@@ -48,41 +86,48 @@
   </tr>
     <%
     on_art = 0 ; defaulter = 0 ; died = 0
-    to = 0 ; ts = 0 ; unknown = 0
-    test = Hash.new(0)
-    (data || {}).each do |patient_id, patient_attr|
+    to = 0 ; ts = 0 ; unknown = 0 ; total = 0
+
+    (data || {}).each do |patient_id, patient_attr| 
       on_art += 1 if patient_attr[:outcome] == 'On ART'
       defaulter += 1 if patient_attr[:outcome] == 'Defaulter'
       died += 1 if patient_attr[:outcome] == 'Died'
       to += 1 if patient_attr[:outcome] == 'Transfered out'
       ts += 1 if patient_attr[:outcome] == 'Treatement stopped'
       unknown += 1 if patient_attr[:outcome] == 'Unknown'
-      test[patient_attr[:outcome]] += 1
+      total = (on_art + defaulter + died + to + ts + unknown)
     end%>
     <tr>
       <td>On ART</td>
-      <td><%=on_art%></td>
+      <td><a href="#" onclick="reportDriller('On ART')"><%=on_art%></a></td>
     </tr>
     <tr>
       <td>Transfered out</td>
-      <td><%=to%></td>
+      <td><a href="#" onclick="reportDriller('Transfered out')"><%=to%></a></td>
     </tr>
     <tr>
       <td>Treatement stopped</td>
-      <td><%=ts%></td>
+      <td><a href="#" onclick="reportDriller('Treatement stopped')"><%=ts%></a></td>
     </tr>
     <tr>
       <td>Defaulter</td>
-      <td><%=defaulter%></td>
+      <td><a href="#" onclick="reportDriller('Defaulter')"><%=defaulter%></a></td>
     </tr>
     <tr>
       <td>Died</td>
-      <td><%=died%></td>
+      <td><a href="#" onclick="reportDriller('Died')"><%=died%></a></td>
     </tr>
     <tr>
       <td>Unknown</td>
-      <td><%=unknown%></td>
+      <td><a href="#" onclick="reportDriller('Unknown')"><%=unknown%></a></td>
     </tr>
+    <tr>
+      <td colspan=2>&nbsp;</td>
+    </tr>
+    <!--tr>
+      <td>&nbsp;</td>
+      <td><%#=total%></td>
+    </tr-->
   <%end%>
   <tbody>
 
@@ -90,3 +135,5 @@
 
 
 <%end%>
+
+

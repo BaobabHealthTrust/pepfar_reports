@@ -449,7 +449,7 @@ ORDER BY clinic ASC"])
         INNER JOIN patient_pregnant_obs preg ON preg.person_id = e.patient_id
         WHERE preg.value_coded = 1065 AND preg.person_id NOT IN(#{patient_ids})
         AND e.age_at_initiation BETWEEN #{age.first} AND #{age.last} 
-        AND DATEDIFF(e.earliest_start_date,preg.obs_datetime) <= 30
+        AND DATEDIFF(preg.obs_datetime, e.earliest_start_date) BETWEEN 0 AND 30
         GROUP BY e.patient_id")
 
       unless result.blank?
@@ -508,7 +508,7 @@ ORDER BY clinic ASC"])
       current_state_for_program(p.person_id, 1, DATE('#{date}')) state,
       current_defaulter(p.person_id,DATE('#{date}')) defaulter,
       e.earliest_start_date,e.age_at_initiation,i.identifier arv_number,
-      i2.identifier national_id
+      i2.identifier national_id,obs.value_coded reason_for_art_concept_id
       FROM earliest_start_date e
       INNER JOIN person p ON p.person_id = e.patient_id AND p.voided = 0 
       LEFT JOIN patient_identifier i ON p.person_id = i.patient_id 
@@ -516,6 +516,8 @@ ORDER BY clinic ASC"])
       LEFT JOIN patient_identifier i2 ON p.person_id = i2.patient_id 
       AND i2.voided = 0 AND i2.identifier_type = 3
       LEFT JOIN person_name n ON n.person_id = p.person_id AND n.voided = 0
+      LEFT JOIN obs ON obs.person_id = p.person_id AND obs.voided = 0
+      AND obs.concept_id = 7563
       WHERE p.person_id IN(#{patient_ids})
       GROUP BY p.person_id;")
 
@@ -531,12 +533,18 @@ ORDER BY clinic ASC"])
             :birthdate => r.birthdate, :family_name => r.family_name,
             :given_name => r.given_name, :gender => gender,
             :outcome => self.get_outcome(r.patient_id, r.state, date),
+            :reason_for_art => self.get_reason_for_art(r.reason_for_art_concept_id),
             :defaulter => r.defaulter,:national_id => r.national_id,:arv_number => r.arv_number
           }
         end
       end
     end
     return total_registered
+  end
+
+  def self.get_reason_for_art(concept_id = nil)
+    return if concept_id.blank?
+    ConceptName.find_by_concept_id(concept_id).name
   end
 
 end

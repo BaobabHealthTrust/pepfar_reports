@@ -68,6 +68,7 @@
     <th id="th5" style="width:200px;">Birthdate</th>                          
     <th id="th5" style="width:200px;">ART start date</th>
     <th id="th5" style="width:200px;">Age when starting</th>
+    <th id="th5" style="width:200px;">Reason for ART</th>
     <th id="th8" style="width:150px;">Current outcome</th>                                  
   </tr>                                                                         
   </thead>                                                                      
@@ -85,6 +86,7 @@
       <td><%=attr[:birthdate].to_date.strftime('%d %b %Y') rescue 'N/A'%></td>                                    
       <td><%=attr[:earliest_start_date]%></td>
       <td><%=attr[:age_at_initiation]%></td>
+      <td><%=attr[:reason_for_art]%></td>
       <td><%=outcome%></td>                                    
     </tr>                                                                       
     <%end%>                                                                     

@@ -98,6 +98,10 @@ class ReportsController < ApplicationController
     end
   end
 
-
+  def patients
+    if request.post?
+      @patients = Report.patients_list(params[:patient_ids])
+    end
+  end
 
 end

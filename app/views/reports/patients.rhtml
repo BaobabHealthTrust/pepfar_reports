@@ -1,0 +1,95 @@
+<script>jQuery.noConflict();</script>                                     
+
+<%=javascript_include_tag "datatable/jquery_data_table" %>                          
+<%=javascript_include_tag "datatable/jquery.dataTables.min" %>
+
+<%= stylesheet_link_tag "datatable/demo_table" %>                                         
+<%= stylesheet_link_tag "datatable/demo_table_jui" %>                                     
+<%#= stylesheet_link_tag "demo_page" %>
+
+<script>
+
+  function dataT(){                                                               
+    jQuery('#search_results').dataTable();                                                  
+  }
+
+  function findAssets() {                                                       
+    var search_str = document.getElementById('search_words').value;               
+                                                                                
+    if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari  
+        xmlhttp=new XMLHttpRequest();                                             
+      }else{// code for IE6, IE5                                                  
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");                           
+      }                                                                           
+      xmlhttp.onreadystatechange=function() {                                     
+        if (xmlhttp.readyState==4 && xmlhttp.status==200) {                       
+          var results = xmlhttp.responseText;                                     
+          if(results == 'undefined' || results == '' || results == '"not validate"') {                           
+            return;                                                               
+          }else{                                                                  
+            document.getElementById('modals').innerHTML = results;                                                           
+            dataT();                                                              
+          }                                                                       
+        }                                                                         
+      }                                                                           
+      xmlhttp.open("GET","/asset_live_search?search_str="+search_str,true);           
+      xmlhttp.send();                                                             
+    } 
+ 
+</script>
+
+<style>
+  .asset_search_div {
+    text-align: right;
+  }
+
+  #modals {
+    padding: 0px 10px 0px 10px;
+  }
+
+  .page-header {
+     padding-left: 10px;
+  }
+
+</style>
+
+<div class="page-header">
+  <h3>Report <small>patient level data</small></h3>
+</div>
+<div id='modals'>                                              
+  <table id="search_results" class="table table-striped table-bordered table-condensed">
+  <thead>                                                                       
+  <tr id = 'table_head'>                                                        
+    <th id="th1" style="width:200px;">ARV number</th>                           
+    <th id="th3" style="width:200px;">National ID</th>                           
+    <th id="th4" style="width:200px;">First name</th>                            
+    <th id="th5" style="width:200px;">Last name</th>                          
+    <th id="th5" style="width:200px;">Birthdate</th>                          
+    <th id="th5" style="width:200px;">ART start date</th>
+    <th id="th5" style="width:200px;">Age when starting</th>
+    <th id="th8" style="width:150px;">Current outcome</th>                                  
+  </tr>                                                                         
+  </thead>                                                                      
+  <tbody id='results'>                                                          
+    <%(@patients || []).each do |patient_id,attr| 
+       outcome = attr[:defaulter] == '1' ? 'Defauter' : 'Not a defaulter'
+       outcome = attr[:outcome] if outcome == 'Not a defaulter' 
+    %>                                    
+    <tr>                                                                        
+      <td><%=attr[:arv_number]%></td>                                            
+      <td><%=attr[:national_id]%></td>                                    
+      <td><%=attr[:given_name]%></td>                                    
+      <td><%=attr[:family_name]%></td>                                    
+      <td><%=attr[:birthdate].to_date.strftime('%d %b %Y') rescue 'N/A'%></td>                                    
+      <td><%=attr[:earliest_start_date]%></td>
+      <td><%=attr[:age_at_initiation]%></td>
+      <td><%=outcome%></td>                                    
+    </tr>                                                                       
+    <%end%>                                                                     
+  </tbody>                                                                      
+  </table>
+</div> 
+
+<script>                                                                        
+  dataT();                                                                      
+</script>

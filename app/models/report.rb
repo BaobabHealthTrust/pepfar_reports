@@ -500,4 +500,43 @@ ORDER BY clinic ASC"])
     return total_registered
   end
 
+  def self.patients_list(patient_ids,date = Date.today.to_s)
+    total_registered = {}
+
+    result = Encounter.find_by_sql("SELECT p.person_id patient_id, e.earliest_start_date,
+      p.birthdate,p.gender,n.given_name,n.family_name,
+      current_state_for_program(p.person_id, 1, DATE('#{date}')) state,
+      current_defaulter(p.person_id,DATE('#{date}')) defaulter,
+      e.earliest_start_date,e.age_at_initiation,i.identifier arv_number,
+      i2.identifier national_id
+      FROM earliest_start_date e
+      INNER JOIN person p ON p.person_id = e.patient_id AND p.voided = 0 
+      LEFT JOIN patient_identifier i ON p.person_id = i.patient_id 
+      AND i.voided = 0 AND i.identifier_type = 4
+      LEFT JOIN patient_identifier i2 ON p.person_id = i2.patient_id 
+      AND i2.voided = 0 AND i2.identifier_type = 3
+      LEFT JOIN person_name n ON n.person_id = p.person_id AND n.voided = 0
+      WHERE p.person_id IN(#{patient_ids})
+      GROUP BY p.person_id;")
+
+    unless result.blank?
+      result.each do |r|
+        gender =  r.gender.upcase rescue nil
+        next if gender.blank?
+        if total_registered[r.patient_id].blank? 
+          total_registered[r.patient_id] = []
+          total_registered[r.patient_id] = {
+            :earliest_start_date =>  r.earliest_start_date,
+            :age_at_initiation => r.age_at_initiation,
+            :birthdate => r.birthdate, :family_name => r.family_name,
+            :given_name => r.given_name, :gender => gender,
+            :outcome => self.get_outcome(r.patient_id, r.state, date),
+            :defaulter => r.defaulter,:national_id => r.national_id,:arv_number => r.arv_number
+          }
+        end
+      end
+    end
+    return total_registered
+  end
+
 end

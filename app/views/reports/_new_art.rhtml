@@ -11,18 +11,15 @@
 
 <script type="text/javascript">
 
-var outcome_patient_ids = new Array();
-
 function reportDriller(passed_outcome) {
-  return;
+  outcome_patient_ids = [];
+
 <%(@followup_months || {}).sort_by{|k,d| k.to_date}.each do |month, data|
   (data || {}).each do |patient_id, patient_attr| %>
    var outcome = "<%=patient_attr[:outcome]%>";
    try {
-     if (outcome_patient_ids[outcome].length < 1) {
-       outcome_patient_ids[outcome] = [<%=patient_id%>]; 
-     }else{
-       outcome_patient_ids[outcome].push(<%=patient_id%>);
+     if (passed_outcome == outcome) {
+       outcome_patient_ids.push(<%=patient_id%>); 
      }
    }catch(e) {
      alert(e);
@@ -30,7 +27,22 @@ function reportDriller(passed_outcome) {
 <%end
 end%>
 
-  alert(outcome_patient_ids[passed_outcome].length);
+  if(outcome_patient_ids.length > 0) {
+    submitForm = document.createElement("FORM");
+    submitForm.setAttribute("type","hidden");
+    document.body.appendChild(submitForm);
+    submitForm.method = "POST";
+
+    newElement = document.createElement("input")
+    newElement.setAttribute("name",'patient_ids')
+    newElement.setAttribute("type","hidden");
+    newElement.value = outcome_patient_ids.join(',');
+    submitForm.appendChild(newElement);
+
+    submitForm.action= "/reports/patients";
+    submitForm.submit();
+    return;
+  }
 }
 
 </script>

@@ -11,6 +11,47 @@
 
 <script type="text/javascript">
 
+function allPatient(cat) {
+  patient_ids = [];
+  if (cat == 'Female') {
+    <%patient_ids = []
+    (@total_registered || {}).each do |patient_id, data|
+      if data[:gender] == 'F' %>
+        patient_ids.push(<%=patient_id%>);
+      <%end
+    end%>
+  }else if(cat == 'Male') {
+    <%patient_ids = []
+    (@total_registered || {}).each do |patient_id, data|
+      if data[:gender] == 'M'%> 
+        patient_ids.push(<%=patient_id%>);
+      <%end
+    end%>
+  }else if(cat == 'All') {
+    <%patient_ids = []
+    (@total_registered || {}).each do |patient_id, data|%>
+        patient_ids.push(<%=patient_id%>);
+    <%end%>
+  }
+
+  if(patient_ids.length > 0) {
+    submitForm = document.createElement("FORM");
+    submitForm.setAttribute("type","hidden");
+    document.body.appendChild(submitForm);
+    submitForm.method = "POST";
+
+    newElement = document.createElement("input")
+    newElement.setAttribute("name",'patient_ids')
+    newElement.setAttribute("type","hidden");
+    newElement.value = patient_ids.join(',');
+    submitForm.appendChild(newElement);
+
+    submitForm.action= "/reports/patients";
+    submitForm.submit();
+    return;
+  }
+}
+
 function reportDriller(passed_outcome) {
   outcome_patient_ids = [];
 
@@ -50,7 +91,7 @@ end%>
 
 <%if not @total_registered.blank?%>
 <div class="table-header">
-  Patients registered - on ART:&nbsp;<%=@start_date%>&nbsp;to&nbsp;<%=@end_date%><br />
+  Patients registered - on ART retention:&nbsp;<%=@start_date%>&nbsp;to&nbsp;<%=@end_date%><br />
   AGE GROUP:&nbsp;<%=@age_group%>
 </div>
 
@@ -75,9 +116,9 @@ end%>
     end
   end%>
   <tr>
-    <td><%=male%></td>
-    <td><%=female%></td>
-    <td><%=@total_registered.length%></td>
+    <td><a href="#" onclick="allPatient('Male');"><%=male%></td>
+    <td><a href="#" onclick="allPatient('Female');"><%=female%></td>
+    <td><a href="#" onclick="allPatient('All');"><%=@total_registered.length%></td>
   </tr>
   <tbody>
 

@@ -11,6 +11,31 @@
 
 <script type="text/javascript">
 
+function allPatient() {
+  patient_ids = [];
+  <%patient_ids = []
+  (@total_registered || {}).each do |patient_id, data|%>
+      patient_ids.push(<%=patient_id%>);
+  <%end%>
+
+  if(patient_ids.length > 0) {
+    submitForm = document.createElement("FORM");
+    submitForm.setAttribute("type","hidden");
+    document.body.appendChild(submitForm);
+    submitForm.method = "POST";
+
+    newElement = document.createElement("input")
+    newElement.setAttribute("name",'patient_ids')
+    newElement.setAttribute("type","hidden");
+    newElement.value = patient_ids.join(',');
+    submitForm.appendChild(newElement);
+
+    submitForm.action= "/reports/patients";
+    submitForm.submit();
+    return;
+  }
+}
+
 function reportDriller(passed_outcome) {
   outcome_patient_ids = [];
 
@@ -57,13 +82,13 @@ end%>
 <table style="width: 100%;" class="data-content">
   <thead>
   <tr>
-    <th>Total registered:</th>
+    <th>Total registered</th>
   </tr>
   </thead>
 
   <tbody>
   <tr>
-    <td><%=@total_registered.length%></td>
+    <td><a href="#" onclick="allPatient();"><%=@total_registered.length%></td>
   </tr>
   <tbody>
 

@@ -500,6 +500,41 @@ ORDER BY clinic ASC"])
     return total_registered
   end
 
+  def self.on_art_started_ipt(start_date, end_date, age)
+    total_registered = {}
+    dispensing_encounter_type_id = EncounterType.find_by_name("DISPENSING").id
+    isoniazed_concept_id = Concept.find_by_name('ISONIAZID').id
+    amount_dispensed_concept = Concept.find_by_name('Amount dispensed').id
+    result = Encounter.find_by_sql("SELECT * FROM earliest_start_date e
+      INNER JOIN person p ON p.person_id = e.patient_id
+      INNER JOIN encounter enc ON enc.patient_id = p.person_id AND
+      enc.encounter_type = #{dispensing_encounter_type_id} INNER JOIN obs ON enc.encounter_id=obs.encounter_id
+      INNER JOIN orders o ON obs.order_id = o.order_id INNER JOIN drug_order do ON
+      o.order_id = do.order_id INNER JOIN drug d ON do.drug_inventory_id = d.drug_id
+      AND d.concept_id = #{isoniazed_concept_id} AND obs.concept_id = #{amount_dispensed_concept}
+      AND p.voided = 0 WHERE e.earliest_start_date BETWEEN '#{start_date}' AND '#{end_date}'
+      AND (LEFT(e.date_enrolled,10) = e.earliest_start_date)
+      AND age_at_initiation BETWEEN #{age.first} AND #{age.last}
+      GROUP BY e.patient_id")
+
+    unless result.blank?
+      result.each do |r|
+        gender =  r.gender.upcase rescue nil
+        next if gender.blank?
+        if total_registered[r.patient_id].blank?
+          total_registered[r.patient_id] = []
+
+          total_registered[r.patient_id] = {
+            :earliest_start_date =>  r.earliest_start_date,
+            :age_at_initiation => r.age_at_initiation,
+            :gender => gender
+          }
+        end
+      end
+    end
+    return total_registered
+  end
+
   def self.patients_list(patient_ids,date = Date.today.to_s)
     total_registered = {}
 

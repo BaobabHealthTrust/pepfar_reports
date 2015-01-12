@@ -535,6 +535,46 @@ ORDER BY clinic ASC"])
     return total_registered
   end
 
+  def self.on_art_with_tb_symptoms(start_date, end_date, age)
+    hiv_clinic_consultation_enc_id = EncounterType.find_by_name("HIV CLINIC CONSULTATION").id
+    tb_concept_id = ConceptName.find_by_name("Routine Tuberculosis Screening").concept_id
+    tb_symptoms_ids = ConceptSet.find_all_by_concept_set(tb_concept_id, :order => 'sort_weight').collect{|cs|
+      cs.concept.concept_id
+    }
+    routine_tb_screening_concept_id = Concept.find_by_name("ROUTINE TB SCREENING").id
+    total_registered = {}
+
+    result = Encounter.find_by_sql("SELECT * FROM earliest_start_date e
+      INNER JOIN person p ON p.person_id = e.patient_id
+      INNER JOIN encounter enc ON enc.patient_id = p.person_id AND
+      enc.encounter_type = #{hiv_clinic_consultation_enc_id} INNER JOIN obs ON
+      enc.encounter_id=obs.encounter_id AND obs.concept_id=#{routine_tb_screening_concept_id}
+      AND DATE(obs.obs_datetime) = (SELECT MAX(DATE(encounter_datetime)) FROM encounter WHERE
+      patient_id = e.patient_id AND voided=0 LIMIT 1)
+      AND p.voided = 0 WHERE e.earliest_start_date BETWEEN '#{start_date}' AND '#{end_date}'
+      AND (LEFT(e.date_enrolled,10) = e.earliest_start_date)
+      AND age_at_initiation BETWEEN #{age.first} AND #{age.last}
+      GROUP BY e.patient_id
+      HAVING value_coded IN (#{tb_symptoms_ids.join(', ')})")
+
+    unless result.blank?
+      result.each do |r|
+        gender =  r.gender.upcase rescue nil
+        next if gender.blank?
+        if total_registered[r.patient_id].blank?
+          total_registered[r.patient_id] = []
+
+          total_registered[r.patient_id] = {
+            :earliest_start_date =>  r.earliest_start_date,
+            :age_at_initiation => r.age_at_initiation,
+            :gender => gender
+          }
+        end
+      end
+    end
+    return total_registered
+  end
+
   def self.patients_list(patient_ids,date = Date.today.to_s)
     total_registered = {}
 

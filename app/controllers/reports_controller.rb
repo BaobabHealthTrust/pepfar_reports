@@ -183,7 +183,7 @@ class ReportsController < ApplicationController
           @age_group = "Patients 15 years old and over when starting"
       end
 
-      @total_registered = Report.total_new_registered(@start_date, @end_date, age)
+      @total_registered = Report.tb_treatment_outcome(@start_date, @end_date, age)
       @followup_months = {}
       unless @total_registered.blank?
         patients_to_follow = @total_registered.keys
